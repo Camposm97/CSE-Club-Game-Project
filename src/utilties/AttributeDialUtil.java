@@ -1,6 +1,6 @@
 package utilties;
 
-import attributeDialers.AttributeDial;
+import controller.attributeDialers.AttributeDial;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.TextField;

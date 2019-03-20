@@ -1,4 +1,4 @@
-package attributeDialers;
+package controller.attributeDialers;
 
 import javafx.scene.layout.GridPane;
 import utilties.AttributesViewerUtil;

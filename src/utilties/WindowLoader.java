@@ -2,19 +2,19 @@ package utilties;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import models.Player;
+import models.entities.Player;
 
 public class WindowLoader {
 	public static void displayPlayer(Player player) {
 		displayAlert(AlertType.INFORMATION, "Created New Player!", 
 				"Name: " + player.getName() + "\n", 
-				"Level: " + player.getLevel() + "\n" + 
-				"Strength: " + player.getAttributes().getStr() + "\n" + 
-				"Dexterity: " + player.getAttributes().getDex() + "\n" + 
-				"Consitution: " + player.getAttributes().getCon() + "\n" + 
-				"Intelligence: " + player.getAttributes().getInt() + "\n" + 
-				"Wisdom: " + player.getAttributes().getWis() + "\n" + 
-				"Charisma: " + player.getAttributes().getCha() + "\n" + 
+				"Level: " + player.getLvl() + "\n" + 
+				"Strength: " + player.getAttribs().getStr() + "\n" + 
+				"Dexterity: " + player.getAttribs().getDex() + "\n" + 
+				"Consitution: " + player.getAttribs().getCon() + "\n" + 
+				"Intelligence: " + player.getAttribs().getInt() + "\n" + 
+				"Wisdom: " + player.getAttribs().getWis() + "\n" + 
+				"Charisma: " + player.getAttribs().getCha() + "\n" + 
 				"Background: " + player.getBackStory());
 	}
 	

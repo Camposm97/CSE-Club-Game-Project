@@ -1,4 +1,4 @@
-package menu;
+package controller.menu;
 
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.BorderPane;

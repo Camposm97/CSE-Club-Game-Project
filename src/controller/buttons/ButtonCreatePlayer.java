@@ -1,11 +1,11 @@
-package buttons;
+package controller.buttons;
 
-import attributeDialers.AttributeDialBag;
+import controller.attributeDialers.AttributeDialBag;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import models.Attributes;
-import models.Player;
+import models.entities.Player;
 import utilties.WindowLoader;
 import view.CharacterBuilderPane;
 

@@ -1,4 +1,6 @@
-package models;
+package models.items;
+
+import models.entities.Entity;
 
 public class Item extends Entity {
 

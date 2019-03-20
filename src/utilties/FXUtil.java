@@ -1,12 +1,12 @@
 package utilties;
 
+import controller.menu.MenuBarBuilt;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import menu.MenuBarBuilt;
 import view.CharacterBuilderPane;
 
 public class FXUtil {

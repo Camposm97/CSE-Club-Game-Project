@@ -1,4 +1,4 @@
-package attributeDialers;
+package controller.attributeDialers;
 
 import utilties.AttributeDialBagUtil;
 import view.CharacterBuilderPane;

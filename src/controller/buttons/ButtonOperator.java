@@ -1,6 +1,6 @@
-package buttons;
+package controller.buttons;
 
-import attributeDialers.AttributeDial;
+import controller.attributeDialers.AttributeDial;
 import javafx.scene.control.Button;
 
 public abstract class ButtonOperator extends Button {

@@ -1,6 +1,6 @@
-package buttons;
+package controller.buttons;
 
-import attributeDialers.AttributeDial;
+import controller.attributeDialers.AttributeDial;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

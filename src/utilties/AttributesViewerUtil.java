@@ -1,6 +1,6 @@
 package utilties;
 
-import attributeDialers.AttributesViewer;
+import controller.attributeDialers.AttributesViewer;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 

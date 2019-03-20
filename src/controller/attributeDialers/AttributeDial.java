@@ -1,7 +1,7 @@
-package attributeDialers;
+package controller.attributeDialers;
 
-import buttons.ButtonMinus;
-import buttons.ButtonPlus;
+import controller.buttons.ButtonMinus;
+import controller.buttons.ButtonPlus;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;

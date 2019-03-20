@@ -1,12 +1,12 @@
 package utilties;
 
-import attributeDialers.AttributeDial;
-import attributeDialers.CharismaDial;
-import attributeDialers.ConsitutionDial;
-import attributeDialers.DexterityDial;
-import attributeDialers.IntelligenceDial;
-import attributeDialers.StrengthDial;
-import attributeDialers.WisdomDial;
+import controller.attributeDialers.AttributeDial;
+import controller.attributeDialers.CharismaDial;
+import controller.attributeDialers.ConsitutionDial;
+import controller.attributeDialers.DexterityDial;
+import controller.attributeDialers.IntelligenceDial;
+import controller.attributeDialers.StrengthDial;
+import controller.attributeDialers.WisdomDial;
 import view.CharacterBuilderPane;
 
 public class AttributeDialBagUtil {	

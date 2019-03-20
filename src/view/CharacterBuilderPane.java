@@ -1,7 +1,7 @@
 package view;
 
-import attributeDialers.AttributesViewer;
-import buttons.ButtonCreatePlayer;
+import controller.attributeDialers.AttributesViewer;
+import controller.buttons.ButtonCreatePlayer;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;

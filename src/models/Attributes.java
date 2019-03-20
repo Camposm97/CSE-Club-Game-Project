@@ -1,6 +1,10 @@
 package models;
 
+import utilties.AttributesUtil;
+
 public class Attributes {
+	private int totalHitPoints;
+	private int hitPoints;
 	private int strength;
 	private int dexterity;
 	private int constituion;
@@ -8,7 +12,12 @@ public class Attributes {
 	private int wisdom;	
 	private int charisma;
 	
+	public Attributes() {
+		this.hitPoints = AttributesUtil.HIT_POINTS;
+	}
+	
 	public Attributes(int strength, int dexterity, int constituion, int intelligence, int wisdom, int charisma) {
+		this.hitPoints = AttributesUtil.HIT_POINTS;
 		this.strength = strength;
 		this.dexterity = dexterity;
 		this.constituion = constituion;
