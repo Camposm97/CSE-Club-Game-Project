@@ -11,8 +11,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import models.Attributes;
 import models.entities.Player;
+import models.statistics.Attributes;
 
 public class Demo extends Application {
 	private Player p1;
@@ -52,7 +52,7 @@ public class Demo extends Application {
 	private Button loadBtAddXp() {
 		Button bt = new Button("+1 XP");
 		bt.setOnAction(e -> {
-			p1.getLvl().addXp(1);
+			p1.getStats().getLvl().addXp(1);
 			displayLevel();
 		});
 		return bt;
@@ -61,7 +61,7 @@ public class Demo extends Application {
 	private Button loadBtAdd5Xp() {
 		Button bt = new Button("+5 XP");
 		bt.setOnAction(e -> {
-			p1.getLvl().addXp(5);
+			p1.getStats().getLvl().addXp(5);
 			displayLevel();
 		});
 		return bt;
@@ -70,7 +70,7 @@ public class Demo extends Application {
 	private Button loadBtAdd10Xp() {
 		Button bt = new Button("+10 XP");
 		bt.setOnAction(e -> {
-			p1.getLvl().addXp(10);
+			p1.getStats().getLvl().addXp(10);
 			displayLevel();
 		});
 		return bt;
@@ -79,7 +79,7 @@ public class Demo extends Application {
 	private Button loadBtAdd50Xp() {
 		Button bt = new Button("+50 XP");
 		bt.setOnAction(e -> {
-			p1.getLvl().addXp(50);
+			p1.getStats().getLvl().addXp(50);
 			displayLevel();
 		});
 		return bt;
@@ -88,7 +88,7 @@ public class Demo extends Application {
 	private Button loadBtAdd100Xp() {
 		Button bt = new Button("+100 XP");
 		bt.setOnAction(e -> {
-			p1.getLvl().addXp(100);
+			p1.getStats().getLvl().addXp(100);
 			displayLevel();
 		});
 		return bt;
@@ -97,7 +97,7 @@ public class Demo extends Application {
 	private Button loadBtAdd1000Xp() {
 		Button bt = new Button("+ 1000 XP");
 		bt.setOnAction(e -> {
-			p1.getLvl().addXp(1000);
+			p1.getStats().getLvl().addXp(1000);
 			displayLevel();
 		});
 		return bt;
@@ -106,7 +106,7 @@ public class Demo extends Application {
 	private Button loadBtLevelUp() {
 		Button bt = new Button("Level Up");
 		bt.setOnAction(e -> {
-			p1.getLvl().levelUp();
+			p1.getStats().getLvl().levelUp();
 			displayLevel();
 		});
 		return bt;
@@ -121,7 +121,7 @@ public class Demo extends Application {
 	}
 
 	private void displayLevel() {
-		ta.appendText(p1.getLvl() + "\n" + "XP needed to level up: " + p1.getLvl().getRequiredXp() + "\n");
+		ta.appendText(p1.getStats().getLvl() + "\n" + "XP needed to level up: " + p1.getStats().getLvl().getRequiredXp() + "\n");
 	}
 
 	public static void main(String[] args) {

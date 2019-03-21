@@ -1,42 +1,32 @@
 package models.entities;
 
-import models.Attributes;
-import models.Level;
+import models.statistics.Attributes;
+import models.statistics.Level;
+import models.statistics.Statistics;
 
 public abstract class CombatEntity extends Entity {
-	protected Level lvl;
-	protected Attributes attribs;
+	protected Statistics stats;
 
 	public CombatEntity(String name, Level lvl, Attributes attribs) {
 		super(name);
-		this.lvl = lvl;
-		this.attribs = attribs;
+		this.stats = new Statistics(lvl, attribs);
 	}
 
 	public CombatEntity(String name, Attributes attribs) {
 		super(name);
-		this.lvl = new Level();
-		this.attribs = attribs;
+		this.stats = new Statistics(attribs);
 	}
 
-	public Level getLvl() {
-		return lvl;
+	public Statistics getStats() {
+		return stats;
 	}
 
-	public void setLvl(Level lvl) {
-		this.lvl = lvl;
-	}
-
-	public Attributes getAttribs() {
-		return attribs;
-	}
-
-	public void setAttribs(Attributes attribs) {
-		this.attribs = attribs;
+	public void setStats(Statistics stats) {
+		this.stats = stats;
 	}
 
 	@Override
 	public String toString() {
-		return "CombatEntity [" + super.toString() + ", lvl=" + lvl + ", attribs=" + attribs + "]";
+		return "CombatEntity [" + super.toString() + ", stats=" + stats + "]";
 	}
 }

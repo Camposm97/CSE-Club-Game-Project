@@ -1,8 +1,8 @@
 package models.items;
 
-import models.Attributes;
-import models.Level;
 import models.entities.CombatEntity;
+import models.statistics.Attributes;
+import models.statistics.Level;
 
 public abstract class Monster extends CombatEntity {
 
