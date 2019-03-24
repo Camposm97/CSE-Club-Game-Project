@@ -8,7 +8,6 @@ public abstract class CharacterPane extends GridPane {
 	protected BackStoryPane backStory;
 	
 	public CharacterPane() {
-		this.tfName = new TextField();
 		this.backStory = new BackStoryPane();
 	}
 	

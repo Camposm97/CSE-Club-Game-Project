@@ -1,24 +1,31 @@
 package scene.layout;
 
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import scene.control.buttons.ButtonCreatePlayer;
-import utilties.character.CharacterBuilderPaneUtil;
+import models.bag.PlayerBag;
+import scene.control.ButtonCreatePlayer;
+import utilties.CharacterBuilderPaneUtil;
 
 public class CharacterBuilderPane extends CharacterPane {
+	private PlayerBag playerBag;
 	private int totalAttrPoints, avAttrPoints;
 	private Label lblAvailablePoints;
-	private AttributesViewer attrViewer;
+	private AbilitiesViewer abilitiesViewer;
 	private ButtonCreatePlayer btCreate;
 
-	public CharacterBuilderPane(int totalAtrrPoints) {
-		this.lblAvailablePoints = new Label(CharacterBuilderPaneUtil.AV_POINTS + String.valueOf(totalAtrrPoints));
-		this.totalAttrPoints = totalAtrrPoints;
-		this.avAttrPoints = totalAtrrPoints;
-		this.attrViewer = new AttributesViewer(this);
+	public CharacterBuilderPane(PlayerBag playerBag) {
+		this.playerBag = playerBag;
+		this.tfName = CharacterBuilderPaneUtil.loadTfName(this);
+		this.lblAvailablePoints = new Label(
+				CharacterBuilderPaneUtil.STR_AVAIL_PTS + String.valueOf(CharacterBuilderPaneUtil.INIT_ABILITY_POINTS));
+		this.totalAttrPoints = CharacterBuilderPaneUtil.INIT_ABILITY_POINTS;
+		this.avAttrPoints = CharacterBuilderPaneUtil.INIT_ABILITY_POINTS;
+		this.abilitiesViewer = new AbilitiesViewer(this);
 		this.btCreate = new ButtonCreatePlayer(this);
 		CharacterBuilderPaneUtil.displayControls(this);
+	}
+
+	public PlayerBag getPlayerBag() {
+		return playerBag;
 	}
 
 	public int getTotalAttrPoints() {
@@ -33,8 +40,8 @@ public class CharacterBuilderPane extends CharacterPane {
 		this.avAttrPoints = avAttributePoints;
 	}
 
-	public AttributesViewer getAttrViewer() {
-		return attrViewer;
+	public AbilitiesViewer getAbilitiesViewer() {
+		return abilitiesViewer;
 	}
 
 	public Label getLblAvailablePoints() {
@@ -58,6 +65,6 @@ public class CharacterBuilderPane extends CharacterPane {
 	}
 
 	public void updateLblAvailablePoints() {
-		lblAvailablePoints.setText(CharacterBuilderPaneUtil.AV_POINTS + String.valueOf(avAttrPoints));
+		lblAvailablePoints.setText(CharacterBuilderPaneUtil.STR_AVAIL_PTS + String.valueOf(avAttrPoints));
 	}
 }

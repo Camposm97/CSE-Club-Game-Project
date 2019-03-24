@@ -1,22 +1,27 @@
 package models.statistics;
 
-import utilties.statistics.LevelUtil;
+import java.io.Serializable;
 
-public class Level {
+public class Level implements Serializable {
+	public static final byte DEFAULT_LEVEL = 1;
 	private short lvl;
 	private int totalXp;
 	private int xpToNextLvl;
-
+	
+	public static int calcXpToNextLvl(int lvl) {	// Level Up Formula
+		return (int) (3 * Math.pow(lvl + 2, 3)) / 4;
+	}
+	
 	public Level(int lvl) {
 		this.lvl = (short) lvl;
 		this.totalXp = 0;
-		this.xpToNextLvl = LevelUtil.calcXpToNextLvl(lvl);
+		this.xpToNextLvl =calcXpToNextLvl(lvl);
 	}
 
 	public Level() {
-		this.lvl = 1;
+		this.lvl = DEFAULT_LEVEL;
 		this.totalXp = 0;
-		this.xpToNextLvl = LevelUtil.calcXpToNextLvl(lvl);
+		this.xpToNextLvl = calcXpToNextLvl(lvl);
 	}
 
 	public int getLvl() {
@@ -31,7 +36,7 @@ public class Level {
 		this.totalXp += xp;
 		while (getRequiredXp() <= 0) {
 			lvl++;
-			xpToNextLvl = LevelUtil.calcXpToNextLvl(lvl);
+			xpToNextLvl = calcXpToNextLvl(lvl);
 			System.out.println(toString());
 		}
 	}
@@ -39,7 +44,7 @@ public class Level {
 	public void levelUp() { // Maybe for consumable item?
 		lvl++;
 		totalXp = xpToNextLvl;
-		xpToNextLvl = LevelUtil.calcXpToNextLvl(lvl);
+		xpToNextLvl = calcXpToNextLvl(lvl);
 		System.out.println(toString());
 	}
 
@@ -50,7 +55,7 @@ public class Level {
 	public int getRequiredXp() { // Returns XP required to level up
 		return (xpToNextLvl - totalXp);
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Level [lvl=" + lvl + ", totalXp=" + totalXp + ", xpToNextLvl=" + xpToNextLvl + "]";

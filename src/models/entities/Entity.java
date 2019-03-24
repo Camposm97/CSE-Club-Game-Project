@@ -1,11 +1,19 @@
 package models.entities;
 
-public abstract class Entity {
+import java.io.Serializable;
+
+public abstract class Entity implements Serializable {
+	private static int idNumber;
+	protected String id;
 	protected String name;
 
 	public Entity(String name) {
-		super();
+		this.id = String.valueOf(idNumber++);
 		this.name = name;
+	}
+	
+	public String getId() {
+		return id;
 	}
 
 	public String getName() {

@@ -1,20 +1,20 @@
 package models.entities;
 
-import models.statistics.Attributes;
+import models.statistics.Abilities;
 import models.statistics.Level;
 import models.statistics.Statistics;
 
 public abstract class CombatEntity extends Entity {
 	protected Statistics stats;
 
-	public CombatEntity(String name, Level lvl, Attributes attribs) {
+	public CombatEntity(String name, Level lvl, Abilities abilities) {
 		super(name);
-		this.stats = new Statistics(lvl, attribs);
+		this.stats = new Statistics(lvl, abilities);
 	}
 
-	public CombatEntity(String name, Attributes attribs) {
+	public CombatEntity(String name, Abilities abilities) {
 		super(name);
-		this.stats = new Statistics(attribs);
+		this.stats = new Statistics(abilities);
 	}
 
 	public Statistics getStats() {

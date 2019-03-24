@@ -1,17 +1,19 @@
 package models.statistics;
 
-public class Statistics {
+import java.io.Serializable;
+
+public class Statistics implements Serializable {
 	private Level lvl;
-	private Attributes attribs;
+	private Abilities abilities;
 	
-	public Statistics(Level lvl, Attributes attribs) {
+	public Statistics(Level lvl, Abilities attribs) {
 		this.lvl = lvl;
-		this.attribs = attribs;
+		this.abilities = attribs;
 	}
 	
-	public Statistics(Attributes attribs) {
+	public Statistics(Abilities abilities) {
 		this.lvl = new Level();
-		this.attribs = attribs;
+		this.abilities = abilities;
 	}
 
 	public Level getLvl() {
@@ -22,16 +24,16 @@ public class Statistics {
 		this.lvl = lvl;
 	}
 
-	public Attributes getAttribs() {
-		return attribs;
+	public Abilities getAbilities() {
+		return abilities;
 	}
 
-	public void setAttribs(Attributes attribs) {
-		this.attribs = attribs;
+	public void setAbilities(Abilities abilities) {
+		this.abilities = abilities;
 	}
 
 	@Override
 	public String toString() {
-		return "Statistics [lvl=" + lvl + ", attribs=" + attribs + "]";
+		return "Statistics [lvl=" + lvl + ", abilities=" + abilities + "]";
 	}
 }
