@@ -4,7 +4,7 @@ import models.item.Item;
 
 /**
  * Add sort method
- * @author Darkp
+ * @author Camposm97
  *
  */
 public class ItemBag {

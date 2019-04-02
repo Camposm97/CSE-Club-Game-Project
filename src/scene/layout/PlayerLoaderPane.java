@@ -1,13 +1,15 @@
 package scene.layout;
 
-import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.BorderPane;
 import models.bag.PlayerBag;
+import utilties.PlayerLoaderPaneUtil;
 
-public class PlayerLoaderPane extends ScrollPane {
+public class PlayerLoaderPane extends BorderPane {
 	private PlayerBag playerBag;
 	
 	public PlayerLoaderPane(PlayerBag playerBag) {
 		this.playerBag = playerBag;
+		PlayerLoaderPaneUtil.displayControls(this);
 	}
 
 	public PlayerBag getPlayerBag() {

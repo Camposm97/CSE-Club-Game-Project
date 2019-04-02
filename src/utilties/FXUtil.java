@@ -4,13 +4,13 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import models.bag.PlayerBag;
 import scene.control.ButtonCreatePlayer;
 import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerLoaderPane;
 import scene.layout.TitleScreenPane;
 
 public class FXUtil {	
@@ -66,13 +66,14 @@ public class FXUtil {
 	 */
 	public static Button loadBtCancel(Pane pane) {
 		Button bt = new Button("Cancel");
-		PlayerBag playerBag;
-		
 		if (pane instanceof CharacterBuilderPane)
 			bt.setPrefWidth(ButtonCreatePlayer.WIDTH);
-			playerBag = ((CharacterBuilderPane)pane).getPlayerBag();
-	
 		bt.setOnAction(e -> {
+			PlayerBag playerBag = null;
+			if (pane instanceof CharacterBuilderPane)
+				playerBag = ((CharacterBuilderPane)pane).getPlayerBag();
+			if (pane instanceof PlayerLoaderPane)
+				playerBag = ((PlayerLoaderPane)pane).getPlayerBag();
 			pane.getScene().setRoot(new TitleScreenPane(playerBag));
 		});
 		return bt;

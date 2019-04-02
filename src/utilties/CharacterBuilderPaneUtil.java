@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import scene.layout.CharacterBuilderPane;
 
 public class CharacterBuilderPaneUtil {
-	public static final int INIT_ABILITY_POINTS = 18;
+	public static final int INIT_ABILITY_POINTS = 30;
 	public static final Integer INIT_ABILITY_SCORE = -2;
 	public static final String STR_AVAIL_PTS = "Available Ability Points: ";
 

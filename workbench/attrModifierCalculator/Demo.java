@@ -12,7 +12,7 @@ public class Demo {
 	 */
 	public static void displayAttrModifiers() {
 		for (int i = -4; i <= MAX_ABIL_POINT; i++) {
-			System.out.printf("%-3d | Ability Score: %-3d\n", i, computeModifier(i));
+			System.out.printf("%-3d | Modifier: %-3d\n", i, computeModifier(i));
 		}
 	}
 	

@@ -69,12 +69,16 @@ public class PlayerBag implements Serializable {
 	}
 	
 	public boolean isFull() {
-		return nElems == maxSize - 1;
+		return nElems == maxSize;
 	}
 	
 	public void display() {
 		for (int i = 0; i < nElems; i++)
 			System.out.println(arr[i]);
 		System.out.println();
+	}
+
+	public int size() {
+		return nElems;
 	}
 }

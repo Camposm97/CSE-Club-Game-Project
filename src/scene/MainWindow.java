@@ -19,7 +19,6 @@ public class MainWindow {
 	
 	public MainWindow(Stage stage) {
 		this.playerBag = FileLoader.loadPlayerBag();
-		playerBag.display();
 		ImageUtil.loadStageIcon(stage);
 		Scene scene = new Scene(new TitleScreenPane(playerBag), WIDTH, HEIGHT);
 		stage.setScene(scene);

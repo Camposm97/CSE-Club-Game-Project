@@ -6,9 +6,9 @@ public class Statistics implements Serializable {
 	private Level lvl;
 	private Abilities abilities;
 	
-	public Statistics(Level lvl, Abilities attribs) {
+	public Statistics(Level lvl, Abilities abilities) {
 		this.lvl = lvl;
-		this.abilities = attribs;
+		this.abilities = abilities;
 	}
 	
 	public Statistics(Abilities abilities) {

@@ -5,8 +5,8 @@ import models.statistics.Abilities;
 public class Player extends CombatEntity {
 	private String backStory;
 
-	public Player(String name, Abilities attribs, String backStory) {
-		super(name, attribs);
+	public Player(String name, Abilities abils, String backStory) {
+		super(name, abils);
 		this.backStory = backStory;
 	}
 
