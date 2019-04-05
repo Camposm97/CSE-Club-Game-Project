@@ -4,11 +4,11 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import scene.layout.CharacterViewer;
+import scene.layout.CharacterEditor;
 
 public class CharacterViewerUtil {
 
-	public static void displayControls(CharacterViewer charViewer) {
+	public static void displayControls(CharacterEditor charViewer) {
 		charViewer.setPadding(new Insets(20));
 		charViewer.setAlignment(Pos.CENTER);
 		charViewer.setHgap(10);

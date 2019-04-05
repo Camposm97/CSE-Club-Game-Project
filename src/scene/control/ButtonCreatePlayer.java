@@ -5,11 +5,11 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import models.entities.Player;
 import scene.layout.CharacterBuilderPane;
-import utilties.FileSaver;
+import utilties.DataSaver;
 import utilties.WindowLoader;
 
 public class ButtonCreatePlayer extends Button {
-	public static final int WIDTH = 128;
+	public static final int WIDTH = 256;
 	private CharacterBuilderPane charPane;
 
 	public ButtonCreatePlayer(CharacterBuilderPane charPane) {
@@ -36,7 +36,7 @@ public class ButtonCreatePlayer extends Button {
 			// Display Player
 			System.out.println(player.toString());
 			charPane.getPlayerBag().add(player);
-			FileSaver.savePlayerBag(charPane.getPlayerBag());
+			DataSaver.savePlayerBag(charPane.getPlayerBag());
 		}
 	}
 }

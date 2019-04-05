@@ -3,10 +3,10 @@ package scene.layout;
 import models.entities.Player;
 import utilties.CharacterViewerUtil;
 
-public class CharacterViewer extends CharacterPane {
+public class CharacterEditor extends CharacterPane {
 	private Player player;
 	
-	public CharacterViewer(Player player) {
+	public CharacterEditor(Player player) {
 		this.tfName = CharacterViewerUtil.loadTfName();
 		this.player = player;
 		CharacterViewerUtil.displayControls(this);

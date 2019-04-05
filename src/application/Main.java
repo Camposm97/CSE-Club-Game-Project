@@ -5,7 +5,12 @@ import javafx.stage.Stage;
 import scene.MainWindow;
 
 /**
- * Implement FileLoader and FileSaver
+ * Implement: 
+ * 	CharacterEditor
+ * 	MonsterMaker
+ * 	ItemMaker
+ * 	CharacterBuilder (resourcePoints)
+ * 	Player should have totalResourcePoints and resourcePointsSpent
  * @author Camposm97
  */
 public class Main extends Application {	
