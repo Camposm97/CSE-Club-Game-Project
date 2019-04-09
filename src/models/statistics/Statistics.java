@@ -2,6 +2,7 @@ package models.statistics;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Statistics implements Serializable {
 	private Level lvl;
 	private Abilities abilities;

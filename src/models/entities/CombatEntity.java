@@ -5,7 +5,10 @@ import models.statistics.Level;
 import models.statistics.Statistics;
 
 public abstract class CombatEntity extends Entity {
+	private static final long serialVersionUID = 1L;
 	protected Statistics stats;
+//	protected EquipmentBag equipBag;
+//	protected AttackBag attackBag;
 
 	public CombatEntity(String name, Level lvl, Abilities abilities) {
 		super(name);

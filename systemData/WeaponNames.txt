@@ -1,6 +1,9 @@
 Wooden Stick
+Brass Knuckles
+Dagger
 Sword
 Spear
 Mace
 Bow
-War Axe
+Cross Bow
+Battle Axe
