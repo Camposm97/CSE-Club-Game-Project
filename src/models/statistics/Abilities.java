@@ -3,6 +3,7 @@ package models.statistics;
 import java.io.Serializable;
 
 public class Abilities implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Strength strength;
 	private Dexterity dexterity;
 	private Constitution constitution;

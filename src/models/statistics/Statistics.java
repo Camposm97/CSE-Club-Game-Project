@@ -2,8 +2,8 @@ package models.statistics;
 
 import java.io.Serializable;
 
-@SuppressWarnings("serial")
 public class Statistics implements Serializable {
+	private static final long serialVersionUID = 6214493983955458410L;
 	private Level lvl;
 	private Abilities abilities;
 	

@@ -3,6 +3,7 @@ package models.entities;
 import models.statistics.Abilities;
 
 public class Player extends CombatEntity {
+	private static final long serialVersionUID = 1L;
 	private String backStory;
 
 	public Player(String name, Abilities abils, String backStory) {

@@ -3,7 +3,8 @@ package models.entities;
 import java.io.Serializable;
 
 public abstract class Entity implements Serializable {
-	private static int idNumber;
+	private static final long serialVersionUID = 2596708375689899578L;
+	private static int idNumber = 0;
 	protected String id;
 	protected String name;
 

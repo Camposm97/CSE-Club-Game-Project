@@ -6,17 +6,18 @@ import scene.MainWindow;
 
 /**
  * Implement: 
- * 	CharacterEditor
- * 	MonsterMaker
- * 	ItemMaker
- * 	CharacterBuilder (resourcePoints)
- * 	Player should have totalResourcePoints and resourcePointsSpent
+ * 	CharacterEditor extends CharacterPane
+ * 	MonsterFactory
+ * 	ItemFactory
+ * 	CharacterBuilder (resourcePoints?)
+ * 	Player should have totalResourcePoints and resourcePointsSpentr 
+ * 	Some way to enable and disable the CharacterEditor controls to increment ability points.
  * @author Camposm97
  */
 public class Main extends Application {	
 	@Override
 	public void start(Stage stage) throws Exception {
-		new MainWindow(stage);
+		new MainWindow(stage);		
 	}
 	
 	public static void main(String[] args) {

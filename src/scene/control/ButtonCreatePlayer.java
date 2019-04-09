@@ -1,5 +1,7 @@
 package scene.control;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -23,16 +25,20 @@ public class ButtonCreatePlayer extends Button {
 		@Override
 		public void handle(ActionEvent e) {
 			if (charPane.isAvAttrPtsEmpty())
-				createPlayer();
+				try {
+					createPlayer();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
 			else
 				WindowLoader.showWarningAllAttrNotSpent();
 		}
 
-		public void createPlayer() {
+		public void createPlayer() throws IOException {
 			String name = charPane.getTfName().getText();
 			String backStory = charPane.getBackStory().getTaBackground().getText();
 			Player player = new Player(name, charPane.getAbilitiesViewer().getAbilities(), backStory);
-			
+
 			// Display Player
 			System.out.println(player.toString());
 			charPane.getPlayerBag().add(player);

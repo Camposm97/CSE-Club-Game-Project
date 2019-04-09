@@ -3,6 +3,7 @@ package models.statistics;
 import java.io.Serializable;
 
 public class Level implements Serializable {
+	private static final long serialVersionUID = 1L;
 	public static final byte DEFAULT_LEVEL = 1;
 	private short lvl;
 	private int totalXp;

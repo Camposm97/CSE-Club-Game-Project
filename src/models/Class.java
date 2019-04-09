@@ -1,23 +1,26 @@
 package models;
 
-public class Class {
-	protected String type;
+import java.io.Serializable;
+
+public class Class implements Serializable {
+	private static final long serialVersionUID = 1L;
+	protected Role role;
 	
-	public Class(String type) {
-		this.type = type;
+	public Class(Role role) {
+		this.role = role;
 	}
-	
-	public String getType() {
-		return type;
+
+	public Role getRole() {
+		return role;
 	}
 	
 	@Override
 	public String toString() {
-		return "Class [type=" + type + "]";
+		return "Class [role=" + role + "]";
 	}
 
 	public static void main(String[] args) {
-		Class c = new Class("Fighter");
+		Class c = new Class(Role.Fighter);
 		System.out.println(c);
 	}
 }

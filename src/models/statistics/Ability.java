@@ -3,8 +3,8 @@ package models.statistics;
 import java.io.Serializable;
 
 public abstract class Ability implements Serializable {
+	private static final long serialVersionUID = 1L;
 	protected int score;
-	protected int modifier;
 	
 	public static int computeModifier(int score) {
 		double modifier = (score - 10) / 2.0;
@@ -23,7 +23,6 @@ public abstract class Ability implements Serializable {
 	
 	public Ability(int score) {
 		this.score = score;
-		this.modifier = computeModifier(score);
 	}
 
 	public int getScore() {
@@ -32,15 +31,9 @@ public abstract class Ability implements Serializable {
 
 	public void setScore(int score) {
 		this.score = score;
-		this.modifier = computeModifier(score);
 	}
 
-	public int getModifier() {
-		return modifier;
-	}
-
-	@Override
-	public String toString() {
-		return "Ability [score=" + score + ", modifier=" + modifier + "]";
+	public String getModifier() {
+		return computeModifier(String.valueOf(score));
 	}
 }
