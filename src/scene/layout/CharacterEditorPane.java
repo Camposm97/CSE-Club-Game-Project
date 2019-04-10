@@ -5,11 +5,11 @@ import javafx.scene.control.TextField;
 import models.entities.Player;
 import utilties.CharEditorUtil;
 
-public class CharacterEditor extends TabPane {
+public class CharacterEditorPane extends TabPane {
 	protected Player player;
 	private TextField tfName;
 	
-	public CharacterEditor(Player player) {
+	public CharacterEditorPane(Player player) {
 		this.tfName = CharEditorUtil.loadTfName();
 		this.player = player;
 		CharEditorUtil.displayControls(this);

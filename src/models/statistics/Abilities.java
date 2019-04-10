@@ -4,47 +4,46 @@ import java.io.Serializable;
 
 public class Abilities implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private Strength strength;
-	private Dexterity dexterity;
-	private Constitution constitution;
-	private Intelligence intelligence;
-	private Wisdom wisdom;
-	private Charisma charisma;
+	private Ability strength;
+	private Ability dexterity;
+	private Ability constitution;
+	private Ability intelligence;
+	private Ability wisdom;
+	private Ability charisma;
 
 	public Abilities(int strScore, int dexScore, int conScore, int intScore, int wisScore, int chaScore) {
-		this.strength = new Strength(strScore);
-		this.dexterity = new Dexterity(dexScore);
-		this.constitution = new Constitution(conScore);
-		this.intelligence = new Intelligence(intScore);
-		this.wisdom = new Wisdom(wisScore);
-		this.charisma = new Charisma(chaScore);
+		this.strength = new Ability(AbilityType.Strength, strScore);
+		this.dexterity = new Ability(AbilityType.Dexterity, dexScore);
+		this.constitution = new Ability(AbilityType.Constitution, conScore);
+		this.intelligence = new Ability(AbilityType.Intelligence, intScore);
+		this.wisdom = new Ability(AbilityType.Wisdom, wisScore);
+		this.charisma = new Ability(AbilityType.Charisma, chaScore);
 	}
 
-	public Strength getStrength() {
+	public Ability getStrength() {
 		return strength;
 	}
 
-	public Dexterity getDexterity() {
+	public Ability getDexterity() {
 		return dexterity;
 	}
 
-	public Constitution getConstitution() {
+	public Ability getConstitution() {
 		return constitution;
 	}
 
-	public Intelligence getIntelligence() {
+	public Ability getIntelligence() {
 		return intelligence;
 	}
 
-	public Wisdom getWisdom() {
+	public Ability getWisdom() {
 		return wisdom;
 	}
 
-	public Charisma getCharisma() {
+	public Ability getCharisma() {
 		return charisma;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Abilities [strength=" + strength + ", dexterity=" + dexterity + ", constitution=" + constitution

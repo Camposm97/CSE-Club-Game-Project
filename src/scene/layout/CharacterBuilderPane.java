@@ -19,6 +19,7 @@ public class CharacterBuilderPane extends GridPane {
 	public CharacterBuilderPane(PlayerBag playerBag) {
 		this.playerBag = playerBag;
 		this.tfName = CharBuilderUtil.loadTfName(this);
+		this.backStory = new BackStoryPane();
 		this.lblAvailablePoints = new Label(
 				CharBuilderUtil.STR_AVAIL_PTS + String.valueOf(CharBuilderUtil.INIT_ABILITY_POINTS));
 		this.totalAttrPoints = CharBuilderUtil.INIT_ABILITY_POINTS;
