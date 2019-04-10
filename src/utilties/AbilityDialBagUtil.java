@@ -17,10 +17,10 @@ public class AbilityDialBagUtil {
 	}
 	
 	public static boolean hasNoPointsInvested(AbilityDial dial) {
-		return Integer.parseInt(dial.getTfScore().getText()) <= CharacterBuilderPaneUtil.INIT_ABILITY_SCORE;
+		return Integer.parseInt(dial.getTfScore().getText()) <= CharBuilderUtil.INIT_ABILITY_SCORE;
 	}
 	
 	public static boolean hasPointsInvested(AbilityDial dial) {
-		return Integer.parseInt(dial.getTfScore().getText()) > CharacterBuilderPaneUtil.INIT_ABILITY_SCORE;
+		return Integer.parseInt(dial.getTfScore().getText()) > CharBuilderUtil.INIT_ABILITY_SCORE;
 	}
 }

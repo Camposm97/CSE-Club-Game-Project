@@ -4,10 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import models.statistics.Ability;
 import scene.layout.CharacterBuilderPane;
 import utilties.AbilityDialUtil;
-import utilties.CharacterBuilderPaneUtil;
 
 public abstract class AbilityDial extends GridPane {
 	protected Label lblAbility;

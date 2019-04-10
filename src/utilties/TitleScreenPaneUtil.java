@@ -12,7 +12,7 @@ import javafx.scene.text.Text;
 import scene.layout.TitleScreenPane;
 
 public class TitleScreenPaneUtil {
-	public static String TITLE = "CSE Club Game Project";
+	public static String TITLE = "CSE Club Game";
 	private static int BT_WIDTH = 200;
 
 	public static void displayControls(TitleScreenPane root) {

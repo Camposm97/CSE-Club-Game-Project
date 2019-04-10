@@ -16,7 +16,7 @@ public class AbilityDialUtil {
 	}
 	
 	public static TextField loadTfModifer() {
-		TextField tf = new TextField(Ability.computeModifier(CharacterBuilderPaneUtil.INIT_ABILITY_SCORE.toString()));
+		TextField tf = new TextField(Ability.computeModifier(CharBuilderUtil.INIT_ABILITY_SCORE.toString()));
 		tf.setEditable(false);
 		tf.setAlignment(Pos.CENTER);
 		tf.setPrefColumnCount(2);
@@ -24,7 +24,7 @@ public class AbilityDialUtil {
 	}
 	
 	public static TextField loadTfNum() {
-		TextField tf = new TextField(CharacterBuilderPaneUtil.INIT_ABILITY_SCORE.toString());
+		TextField tf = new TextField(CharBuilderUtil.INIT_ABILITY_SCORE.toString());
 		tf.setEditable(false);
 		tf.setAlignment(Pos.CENTER);
 		tf.setPrefColumnCount(2);
