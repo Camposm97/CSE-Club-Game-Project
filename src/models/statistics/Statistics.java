@@ -3,8 +3,9 @@ package models.statistics;
 import java.io.Serializable;
 
 public class Statistics implements Serializable {
-	private static final long serialVersionUID = 6214493983955458410L;
+	private static final long serialVersionUID = 1L;
 	private Level lvl;
+	private Stat health, mana;
 	private Abilities abilities;
 	
 	public Statistics(Level lvl, Abilities abilities) {
@@ -24,6 +25,14 @@ public class Statistics implements Serializable {
 	public void setLvl(Level lvl) {
 		this.lvl = lvl;
 	}
+	
+	public Health getHealth() {
+		return health;
+	}
+	
+	public Mana getMana() {
+		return mana;
+	}
 
 	public Abilities getAbilities() {
 		return abilities;
@@ -32,9 +41,9 @@ public class Statistics implements Serializable {
 	public void setAbilities(Abilities abilities) {
 		this.abilities = abilities;
 	}
-
-	@Override
-	public String toString() {
-		return "Statistics [lvl=" + lvl + ", abilities=" + abilities + "]";
+	
+	public static void main(String[] args) {
+		Statistics stats = new Statistics(new Abilities(1, 1, 1, 1, 1, 1));
+		System.out.println(stats);
 	}
 }

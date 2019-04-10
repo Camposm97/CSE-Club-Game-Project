@@ -2,9 +2,12 @@ package models;
 
 import java.io.Serializable;
 
+import models.statistics.Abilities;
+
 public class Class implements Serializable {
 	private static final long serialVersionUID = 1L;
 	protected Role role;
+	protected Abilities bonusAbilities;
 	
 	public Class(Role role) {
 		this.role = role;
@@ -12,6 +15,10 @@ public class Class implements Serializable {
 
 	public Role getRole() {
 		return role;
+	}
+	
+	public Abilities getBonusAbilities() {
+		return bonusAbilities;
 	}
 	
 	@Override

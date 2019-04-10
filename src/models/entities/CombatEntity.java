@@ -28,10 +28,6 @@ public abstract class CombatEntity extends Entity {
 		return stats;
 	}
 
-	public void setStats(Statistics stats) {
-		this.stats = stats;
-	}
-
 	@Override
 	public String toString() {
 		return "CombatEntity [" + super.toString() + ", stats=" + stats + "]";

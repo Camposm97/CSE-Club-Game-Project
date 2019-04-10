@@ -8,6 +8,8 @@ public class Level implements Serializable {
 	private short lvl;
 	private int totalXp;
 	private int xpToNextLvl;
+	private Stat health, mana;
+	private Abilities abilities;
 	
 	public static int calcXpToNextLvl(int lvl) {	// Level Up Formula
 		return (int) (3 * Math.pow(lvl + 2, 3)) / 4;
@@ -24,6 +26,12 @@ public class Level implements Serializable {
 		this.totalXp = 0;
 		this.xpToNextLvl = calcXpToNextLvl(lvl);
 	}
+	
+	public Level(int lvl) {
+		this.lvl = (short) lvl;
+		this.totalXp = 0;
+		this.xpToNextLvl = calcXpToNextLvl(lvl);
+	}
 
 	public int getLvl() {
 		return lvl;
@@ -37,8 +45,9 @@ public class Level implements Serializable {
 		this.totalXp += xp;
 		while (getRequiredXp() <= 0) {
 			lvl++;
+			
 			xpToNextLvl = calcXpToNextLvl(lvl);
-			System.out.println(toString());
+			System.out.println("Level Up! " + toString());
 		}
 	}
 

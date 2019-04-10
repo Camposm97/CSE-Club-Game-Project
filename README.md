@@ -1,7 +1,7 @@
 Objective: Create a RPG Game
 
 Things to implement:
-	- GUI to view player statistics.
+	- GUI to view player statistics. (CharacterEditor)
 	- Level Up GUI that opens when a player levels up to invest gained attribute points (Maybe implement in GUI to view player)
 
 Things to think about:
