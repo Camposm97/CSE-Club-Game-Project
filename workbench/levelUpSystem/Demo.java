@@ -12,7 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import models.entities.Player;
-import models.statistics.Abilities;
+import stats.Abilities;
 
 public class Demo extends Application {
 	private Player p1;

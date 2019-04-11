@@ -1,4 +1,4 @@
-package models.statistics;
+package stats;
 
 public enum StatType {
 	Health, Mana, Ability

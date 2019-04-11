@@ -1,27 +1,22 @@
 package models.entities;
 
-import models.statistics.Abilities;
-import models.statistics.Level;
-import models.statistics.Statistics;
+import stats.Abilities;
+import stats.Stat;
+import stats.Statistics;
 
 public abstract class CombatEntity extends Entity {
 	private static final long serialVersionUID = 1L;
 	protected Statistics stats;
 //	protected Inventory inv;
 	
-	public CombatEntity(String name, Level lvl, Abilities abilities) {
-		super(name);
-		this.stats = new Statistics(lvl, abilities);
-	}
-
-	public CombatEntity(String name, Abilities abilities) {
-		super(name);
-		this.stats = new Statistics(abilities);
-	}
-	
 	public CombatEntity(String name, Statistics stats) {
 		super(name);
 		this.stats = stats;
+	}
+
+	public CombatEntity(String name, Stat abilityPts, Abilities abils) {
+		super(name);
+		this.stats = new Statistics(abilityPts, abils);
 	}
 
 	public Statistics getStats() {

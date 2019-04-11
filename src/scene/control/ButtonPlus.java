@@ -2,7 +2,7 @@ package scene.control;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import models.statistics.Ability;
+import stats.Ability;
 
 public class ButtonPlus extends ButtonOperator {
 

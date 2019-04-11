@@ -4,8 +4,8 @@ import javafx.geometry.Pos;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
-import models.statistics.Ability;
 import scene.control.AbilityDial;
+import stats.Ability;
 
 public class AbilityDialUtil {	
 	public static void displayControls(AbilityDial dial) {

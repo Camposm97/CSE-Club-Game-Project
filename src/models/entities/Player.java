@@ -1,6 +1,6 @@
 package models.entities;
 
-import models.statistics.Abilities;
+import stats.Abilities;
 
 public class Player extends CombatEntity {
 	private static final long serialVersionUID = 1L;

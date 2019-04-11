@@ -4,8 +4,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import models.entities.Player;
-import models.statistics.Abilities;
 import scene.layout.CharacterEditorPane;
+import stats.Abilities;
 
 public class Demo extends Application {
 	@Override
