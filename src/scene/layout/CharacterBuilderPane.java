@@ -9,7 +9,7 @@ import utilties.CharBuilderUtil;
 
 public class CharacterBuilderPane extends GridPane {
 	private PlayerBag playerBag;
-	private int totalAttrPoints, avAttrPoints;
+	private int totalPoints, currentPoints;
 	private TextField tfName;
 	private BackStoryPane backStory;
 	private Label lblAvailablePoints;
@@ -21,9 +21,9 @@ public class CharacterBuilderPane extends GridPane {
 		this.tfName = CharBuilderUtil.loadTfName(this);
 		this.backStory = new BackStoryPane();
 		this.lblAvailablePoints = new Label(
-				CharBuilderUtil.STR_AVAIL_PTS + String.valueOf(CharBuilderUtil.INIT_ABILITY_POINTS));
-		this.totalAttrPoints = CharBuilderUtil.INIT_ABILITY_POINTS;
-		this.avAttrPoints = CharBuilderUtil.INIT_ABILITY_POINTS;
+				CharBuilderUtil.AVAIL_PTS_TXT + String.valueOf(CharBuilderUtil.INIT_ABILITY_POINTS));
+		this.totalPoints = CharBuilderUtil.INIT_ABILITY_POINTS;
+		this.currentPoints = CharBuilderUtil.INIT_ABILITY_POINTS;
 		this.abilitiesViewer = new AbilitiesViewer(this);
 		this.btCreate = new ButtonCreatePlayer(this);
 		CharBuilderUtil.displayControls(this);
@@ -34,15 +34,15 @@ public class CharacterBuilderPane extends GridPane {
 	}
 
 	public int getTotalAttrPoints() {
-		return totalAttrPoints;
+		return totalPoints;
 	}
 
 	public int getAvailableAttrPoints() {
-		return avAttrPoints;
+		return currentPoints;
 	}
 
 	public void setAvailableAttrPoints(int avAttributePoints) {
-		this.avAttrPoints = avAttributePoints;
+		this.currentPoints = avAttributePoints;
 	}
 
 	public AbilitiesViewer getAbilitiesViewer() {
@@ -66,14 +66,14 @@ public class CharacterBuilderPane extends GridPane {
 	}
 
 	public boolean isAvAttrPtsEmpty() {
-		return avAttrPoints <= 0;
+		return currentPoints <= 0;
 	}
 
 	public boolean isAvAttrPtsFull() {
-		return totalAttrPoints < avAttrPoints;
+		return totalPoints < currentPoints;
 	}
 
 	public void updateLblAvailablePoints() {
-		lblAvailablePoints.setText(CharBuilderUtil.STR_AVAIL_PTS + String.valueOf(avAttrPoints));
+		lblAvailablePoints.setText(CharBuilderUtil.AVAIL_PTS_TXT + String.valueOf(currentPoints));
 	}
 }

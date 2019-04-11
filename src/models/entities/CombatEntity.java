@@ -1,8 +1,8 @@
 package models.entities;
 
-import stats.Abilities;
-import stats.Stat;
-import stats.Statistics;
+import statistics.Abilities;
+import statistics.Stat;
+import statistics.Statistics;
 
 public abstract class CombatEntity extends Entity {
 	private static final long serialVersionUID = 1L;
@@ -14,9 +14,9 @@ public abstract class CombatEntity extends Entity {
 		this.stats = stats;
 	}
 
-	public CombatEntity(String name, Stat abilityPts, Abilities abils) {
+	public CombatEntity(String name, int hitPoints, int manaPoints, Stat abilityPts, Abilities abils) {
 		super(name);
-		this.stats = new Statistics(abilityPts, abils);
+		this.stats = new Statistics(abilityPts, hitPoints, manaPoints, abils);
 	}
 
 	public Statistics getStats() {

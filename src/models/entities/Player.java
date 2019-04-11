@@ -1,13 +1,13 @@
 package models.entities;
 
-import stats.Abilities;
+import statistics.Statistics;
 
 public class Player extends CombatEntity {
 	private static final long serialVersionUID = 1L;
 	private String backStory;
 
-	public Player(String name, Abilities abils, String backStory) {
-		super(name, abils);
+	public Player(String name, Statistics stats, String backStory) {
+		super(name, stats);
 		this.backStory = backStory;
 	}
 

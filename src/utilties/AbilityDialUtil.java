@@ -5,7 +5,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
 import scene.control.AbilityDial;
-import stats.Ability;
+import statistics.Ability;
 
 public class AbilityDialUtil {	
 	public static void displayControls(AbilityDial dial) {

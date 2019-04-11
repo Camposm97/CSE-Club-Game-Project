@@ -7,6 +7,10 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import models.entities.Player;
 import scene.layout.CharacterBuilderPane;
+import statistics.Stat;
+import statistics.StatType;
+import statistics.Statistics;
+import utilties.CharBuilderUtil;
 import utilties.DataSaver;
 import utilties.WindowLoader;
 
@@ -37,11 +41,12 @@ public class ButtonCreatePlayer extends Button {
 		public void createPlayer() throws IOException {
 			String name = charPane.getTfName().getText();
 			String backStory = charPane.getBackStory().getTaBackground().getText();
-			Player player = new Player(name, charPane.getAbilitiesViewer().getAbilities(), backStory);
+			Stat abilityPts = new Stat(StatType.Ability, CharBuilderUtil.INIT_ABILITY_POINTS, CharBuilderUtil.INIT_ABILITY_POINTS);
+			Player p1 = new Player(name, new Statistics(abilityPts, 15, 10, charPane.getAbilitiesViewer().getAbilities()), backStory);
 
 			// Display Player
-			System.out.println(player.toString());
-			charPane.getPlayerBag().add(player);
+			System.out.println(p1.toString());
+			charPane.getPlayerBag().add(p1);
 			DataSaver.savePlayerBag(charPane.getPlayerBag());
 		}
 	}

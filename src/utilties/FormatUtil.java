@@ -8,13 +8,13 @@ public class FormatUtil {
 	 * load from.
 	 */
 	public static String format(Player p) {
-		return p.getName() + "\n" + String.format("LVL %-10s\t", p.getStats().getLvl().getLvl())
+		return p.getName() + "\n" + String.format("LVL %-10s\t", p.getStats().getLevel().getLvl())
 				+ String.format("STR: %-12sDEX: %-12sCON: %-12sINT: %-12sWIS: %-12sCHA: %-12s",
-						p.getStats().getAbilities().getStrength().getScore(),
-						p.getStats().getAbilities().getDexterity().getScore(),
-						p.getStats().getAbilities().getConstitution().getScore(),
-						p.getStats().getAbilities().getIntelligence().getScore(),
-						p.getStats().getAbilities().getWisdom().getScore(),
-						p.getStats().getAbilities().getCharisma().getScore());
+						p.getStats().getAbils().getStrength().getScore(),
+						p.getStats().getAbils().getDexterity().getScore(),
+						p.getStats().getAbils().getConstitution().getScore(),
+						p.getStats().getAbils().getIntelligence().getScore(),
+						p.getStats().getAbils().getWisdom().getScore(),
+						p.getStats().getAbils().getCharisma().getScore());
 	}
 }

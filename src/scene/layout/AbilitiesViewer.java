@@ -2,7 +2,7 @@ package scene.layout;
 
 import javafx.scene.layout.GridPane;
 import scene.control.AbilityDialBag;
-import stats.Abilities;
+import statistics.Abilities;
 import utilties.AbilitiesViewerUtil;
 
 public class AbilitiesViewer extends GridPane {

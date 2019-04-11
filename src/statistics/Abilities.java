@@ -1,11 +1,9 @@
-package stats;
+package statistics;
 
 import java.io.Serializable;
 
 public class Abilities implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int totalAbilityPoints;
-	private int abilityPointsLeft;
 	private Ability strength;
 	private Ability dexterity;
 	private Ability constitution;
@@ -20,22 +18,6 @@ public class Abilities implements Serializable {
 		this.intelligence = new Ability(AbilityType.Intelligence, intScore);
 		this.wisdom = new Ability(AbilityType.Wisdom, wisScore);
 		this.charisma = new Ability(AbilityType.Charisma, chaScore);
-	}
-
-	public int getTotalAbilityPoints() {
-		return totalAbilityPoints;
-	}
-
-	public void setTotalAbilityPoints(int totalAbilityPoints) {
-		this.totalAbilityPoints = totalAbilityPoints;
-	}
-
-	public int getAbilityPointsLeft() {
-		return abilityPointsLeft;
-	}
-
-	public void setAbilityPointsLeft(int abilityPointsLeft) {
-		this.abilityPointsLeft = abilityPointsLeft;
 	}
 
 	public Ability getStrength() {

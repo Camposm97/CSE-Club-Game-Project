@@ -9,7 +9,7 @@ import scene.layout.CharacterBuilderPane;
 public class CharBuilderUtil {
 	public static final int INIT_ABILITY_POINTS = 30;
 	public static final Integer INIT_ABILITY_SCORE = -2;
-	public static final String STR_AVAIL_PTS = "Available Ability Points: ";
+	public static final String AVAIL_PTS_TXT = "Available Ability Points: ";
 
 	public static void displayControls(CharacterBuilderPane charPane) {
 		charPane.setPadding(new Insets(20));

@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import models.entities.Player;
 import scene.layout.CharacterEditorPane;
-import stats.Abilities;
+import statistics.Abilities;
 
 public class Demo extends Application {
 	@Override

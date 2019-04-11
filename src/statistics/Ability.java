@@ -1,4 +1,4 @@
-package stats;
+package statistics;
 
 import java.io.Serializable;
 
@@ -22,16 +22,13 @@ public class Ability implements Serializable {
 			return "" + modifier;
 	}
 	
-	public Ability(AbilityType type, int score) {
+	public Ability(AbilityType type, int score) {	// Default Constructor
+		this.type = type;
 		this.score = score;
 	}
 
 	public AbilityType getType() {
 		return type;
-	}
-
-	public void setType(AbilityType type) {
-		this.type = type;
 	}
 
 	public int getScore() {
@@ -41,8 +38,13 @@ public class Ability implements Serializable {
 	public void setScore(int score) {
 		this.score = score;
 	}
-
-	public String getModifier() {
-		return computeModifier(String.valueOf(score));
+	
+	public int getModifier() {
+		return computeModifier(score);
+	}
+	
+	@Override
+	public String toString() {
+		return "Ability [type=" + type + ", score=" + score + "]";
 	}
 }

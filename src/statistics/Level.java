@@ -1,17 +1,18 @@
-package stats;
+package statistics;
 
 import java.io.Serializable;
 
+import utilties.LevelUtil;
+
 public class Level implements Serializable {
 	private static final long serialVersionUID = 1L;
-	public static final byte DEFAULT_LVL = 1;
 	private int lvl;
 	private int totalXp;
 	private int xpToNextLvl;
 	private Statistics stats;
 	
 	public Level(Statistics stats) {
-		this.lvl = DEFAULT_LVL;
+		this.lvl = LevelUtil.DEFAULT_LVL;
 		this.xpToNextLvl = calcXpToNextLvl(lvl);
 		this.stats = stats;
 	}
@@ -25,6 +26,10 @@ public class Level implements Serializable {
 	public int getLvl() {
 		return lvl;
 	}
+	
+	public Statistics getStats() {
+		return stats;
+	}
 
 	public int getTotalXp() {
 		return totalXp;
@@ -32,20 +37,20 @@ public class Level implements Serializable {
 
 	public void addXp(int xp) {
 		this.totalXp += xp;
-		while (getRequiredXp() <= 0) {
-			lvl++;
-			xpToNextLvl = calcXpToNextLvl(lvl);
-			
-//			System.out.println("Level Up! " + toString());
-		}
+		while (getRequiredXp() <= 0)
+			LevelUtil.levelUp(this);
 	}
-
-//	public void levelUp() { // Maybe for consumable item?
-//		lvl++;
-//		totalXp = xpToNextLvl;
-//		xpToNextLvl = calcXpToNextLvl(lvl);
-//		System.out.println(toString());
-//	}
+	
+	public void levelUp() {
+		lvl++;
+		xpToNextLvl = calcXpToNextLvl(lvl);
+	}
+	
+	public void autoLevelUp() {
+		lvl++;
+		totalXp = xpToNextLvl;
+		xpToNextLvl = calcXpToNextLvl(lvl);
+	}
 	
 	public int getXpToNextLvl() {
 		return xpToNextLvl;
@@ -55,12 +60,12 @@ public class Level implements Serializable {
 		return (xpToNextLvl - totalXp);
 	}
 	
-	public static int calcXpToNextLvl(int lvl) {	// Level Up Formula
+	public static int calcXpToNextLvl(int lvl) { // Level Up Formula
 		return (int) (3 * Math.pow(lvl + 2, 3)) / 4;
 	}
 
 	@Override
 	public String toString() {
-		return "Level [lvl=" + lvl + ", totalXp=" + totalXp + ", xpToNextLvl=" + xpToNextLvl + ", stats=" + stats + "]";
+		return "Level [lvl=" + lvl + ", totalXp=" + totalXp + ", xpToNextLvl=" + xpToNextLvl + "]";
 	}
 }
