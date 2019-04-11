@@ -1,8 +1,8 @@
 package utilties;
 
-import statistics.Level;
-import statistics.Stat;
-import statistics.Statistics;
+import models.statistics.Level;
+import models.statistics.Stat;
+import models.statistics.Statistics;
 
 public class LevelUtil {
 	public static final byte DEFAULT_LVL = 1;
@@ -21,7 +21,7 @@ public class LevelUtil {
 		addManaPoints(level.getStats());
 	}
 	
-	public static void addHitPoints(Statistics stats) {
+	private static void addHitPoints(Statistics stats) {
 		Stat stat = stats.getHitPts();
 		int bonus = stats.getAbils().getConstitution().getModifier();
 		if (bonus > 0)
@@ -31,7 +31,7 @@ public class LevelUtil {
 		stat.resetCurrent();
 	}
 	
-	public static void addManaPoints(Statistics stats) {
+	private static void addManaPoints(Statistics stats) {
 		Stat stat = stats.getManaPts();
 		int bonus = stats.getAbils().getIntelligence().getModifier();
 		if (bonus > 0)

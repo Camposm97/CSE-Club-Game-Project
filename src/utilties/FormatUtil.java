@@ -8,7 +8,7 @@ public class FormatUtil {
 	 * load from.
 	 */
 	public static String format(Player p) {
-		return p.getName() + "\n" + String.format("LVL %-10s\t", p.getStats().getLevel().getLvl())
+		return p.getName() + "\n" + String.format("LVL %-10s\t", p.getStats().getLvl().getLvl())
 				+ String.format("STR: %-12sDEX: %-12sCON: %-12sINT: %-12sWIS: %-12sCHA: %-12s",
 						p.getStats().getAbils().getStrength().getScore(),
 						p.getStats().getAbils().getDexterity().getScore(),

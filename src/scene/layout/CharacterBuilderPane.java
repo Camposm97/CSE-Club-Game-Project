@@ -4,27 +4,30 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import models.bag.PlayerBag;
+import models.statistics.Stat;
+import models.statistics.StatType;
 import scene.control.ButtonCreatePlayer;
 import utilties.CharBuilderUtil;
 
 public class CharacterBuilderPane extends GridPane {
 	private PlayerBag playerBag;
+	private Stat abilityPts;	// Replace totalPoints and currentPoints with this.
 	private int totalPoints, currentPoints;
 	private TextField tfName;
 	private BackStoryPane backStory;
-	private Label lblAvailablePoints;
-	private AbilitiesViewer abilitiesViewer;
+	private Label lblAvailPts;
+	private AbilitiesViewer abilsViewer;
 	private ButtonCreatePlayer btCreate;
-	
-	public CharacterBuilderPane(PlayerBag playerBag) {
+
+	public CharacterBuilderPane(PlayerBag playerBag) { // Constructor
 		this.playerBag = playerBag;
+		this.abilityPts = new Stat(StatType.Ability, CharBuilderUtil.INIT_ABILITY_PTS);
 		this.tfName = CharBuilderUtil.loadTfName(this);
 		this.backStory = new BackStoryPane();
-		this.lblAvailablePoints = new Label(
-				CharBuilderUtil.AVAIL_PTS_TXT + String.valueOf(CharBuilderUtil.INIT_ABILITY_POINTS));
-		this.totalPoints = CharBuilderUtil.INIT_ABILITY_POINTS;
-		this.currentPoints = CharBuilderUtil.INIT_ABILITY_POINTS;
-		this.abilitiesViewer = new AbilitiesViewer(this);
+		this.lblAvailPts = new Label(CharBuilderUtil.AVAIL_PTS_TXT + String.valueOf(CharBuilderUtil.INIT_ABILITY_PTS));
+		this.totalPoints = CharBuilderUtil.INIT_ABILITY_PTS;
+		this.currentPoints = CharBuilderUtil.INIT_ABILITY_PTS;
+		this.abilsViewer = new AbilitiesViewer(this);
 		this.btCreate = new ButtonCreatePlayer(this);
 		CharBuilderUtil.displayControls(this);
 	}
@@ -32,23 +35,27 @@ public class CharacterBuilderPane extends GridPane {
 	public PlayerBag getPlayerBag() {
 		return playerBag;
 	}
+	
+	public Stat getAbilityPts() {
+		return abilityPts;
+	}
 
-	public int getTotalAttrPoints() {
+	public int getTotalAbilPts() {
 		return totalPoints;
 	}
 
-	public int getAvailableAttrPoints() {
+	public int getAvailAbilityPts() {
 		return currentPoints;
 	}
 
-	public void setAvailableAttrPoints(int avAttributePoints) {
-		this.currentPoints = avAttributePoints;
+	public void setAvailAbilPts(int currentPoints) {
+		this.currentPoints = currentPoints;
 	}
 
-	public AbilitiesViewer getAbilitiesViewer() {
-		return abilitiesViewer;
+	public AbilitiesViewer getAbilsViewer() {
+		return abilsViewer;
 	}
-	
+
 	public TextField getTfName() {
 		return tfName;
 	}
@@ -57,23 +64,23 @@ public class CharacterBuilderPane extends GridPane {
 		return backStory;
 	}
 
-	public Label getLblAvailablePoints() {
-		return lblAvailablePoints;
+	public Label getLblAvailPts() {
+		return lblAvailPts;
 	}
 
 	public ButtonCreatePlayer getBtCreate() {
 		return btCreate;
 	}
 
-	public boolean isAvAttrPtsEmpty() {
+	public boolean isAvailAbilPtsEmpty() {
 		return currentPoints <= 0;
 	}
 
-	public boolean isAvAttrPtsFull() {
+	public boolean isAvailAbilPtsFull() {
 		return totalPoints < currentPoints;
 	}
 
-	public void updateLblAvailablePoints() {
-		lblAvailablePoints.setText(CharBuilderUtil.AVAIL_PTS_TXT + String.valueOf(currentPoints));
+	public void updateLblAvailPts() {
+		lblAvailPts.setText(CharBuilderUtil.AVAIL_PTS_TXT + String.valueOf(currentPoints));
 	}
 }

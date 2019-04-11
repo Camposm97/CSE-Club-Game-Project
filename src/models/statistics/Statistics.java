@@ -1,15 +1,15 @@
-package statistics;
+package models.statistics;
 
 import java.io.Serializable;
 
 public class Statistics implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private Level level;
+	private Level lvl;
 	private Stat abilityPts, hitPts, manaPts;
 	private Abilities abils;
 
 	public Statistics(Stat abilityPts, int totalHitPoints, int totalManaPoints, Abilities abils) {	// Default
-		this.level = new Level(this);
+		this.lvl = new Level(this);
 		this.abilityPts = abilityPts;
 		this.hitPts = new Stat(StatType.Health, totalHitPoints);
 		this.manaPts = new Stat(StatType.Mana, totalManaPoints);
@@ -17,15 +17,15 @@ public class Statistics implements Serializable {
 	}
 	
 	public Statistics(int totalAbilityPoints, int currentAbilityPoints, int totalHitPoints, int totalManaPoints, Abilities abils) {
-		this.level = new Level(this);
+		this.lvl = new Level(this);
 		this.abilityPts = new Stat(StatType.Ability, totalAbilityPoints, currentAbilityPoints);
 		this.hitPts = new Stat(StatType.Health, totalHitPoints);
 		this.manaPts = new Stat(StatType.Mana, totalManaPoints);
 		this.abils = abils;
 	}
 
-	public Level getLevel() {
-		return level;
+	public Level getLvl() {
+		return lvl;
 	}
 
 	public Stat getAbilityPts() {
@@ -46,7 +46,7 @@ public class Statistics implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Statistics [level=" + level + ", abilityPts=" + abilityPts + ", hitPts=" + hitPts + ", manaPts="
+		return "Statistics [level=" + lvl + ", abilityPts=" + abilityPts + ", hitPts=" + hitPts + ", manaPts="
 				+ manaPts + ", abils=" + abils + "]";
 	}
 }

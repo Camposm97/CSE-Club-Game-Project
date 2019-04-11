@@ -1,8 +1,8 @@
 package models.entities;
 
-import statistics.Abilities;
-import statistics.Stat;
-import statistics.Statistics;
+import models.statistics.Abilities;
+import models.statistics.Stat;
+import models.statistics.Statistics;
 
 public abstract class CombatEntity extends Entity {
 	private static final long serialVersionUID = 1L;

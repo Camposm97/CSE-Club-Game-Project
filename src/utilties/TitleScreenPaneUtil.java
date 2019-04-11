@@ -50,7 +50,6 @@ public class TitleScreenPaneUtil {
 		bt.setPrefWidth(BT_WIDTH);
 		bt.setFont(Font.font(20));
 		bt.setOnAction(e -> {
-			System.out.println("Display scene with save files (playerBag)");
 			root.getPlayerBag().display();
 			SceneLoader.loadPlayerLoaderPane(root);
 		});

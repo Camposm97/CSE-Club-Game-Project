@@ -1,9 +1,9 @@
-package utilties;
+package io;
 
 import java.io.File;
 
-import io.ObjectFile;
 import models.bag.PlayerBag;
+import utilties.Paths;
 
 public class DataSaver {
 	public static void savePlayerBag(PlayerBag bag) {

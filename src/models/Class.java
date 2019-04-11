@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Class implements Serializable {
 	private static final long serialVersionUID = 1L;
 	protected Role role;
+//	protected Abilities abils;
 	
 	public Class(Role role) {
 		this.role = role;

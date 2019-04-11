@@ -12,7 +12,10 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import models.entities.Player;
-import statistics.Abilities;
+import models.statistics.Abilities;
+import models.statistics.Stat;
+import models.statistics.StatType;
+import models.statistics.Statistics;
 
 public class Demo extends Application {
 	private Player p1;
@@ -20,7 +23,7 @@ public class Demo extends Application {
 
 	@Override
 	public void init() {
-		p1 = new Player("Michael", new Abilities(0,0,0,0,0,0), "");
+		p1 = new Player("Michael", new Statistics(new Stat(StatType.Ability, 30), 15, 10, new Abilities(10, 10, 10, 10, 10, 10)),  "");
 		ta = new TextArea();
 		ta.setEditable(false);
 		ta.setPrefColumnCount(28);

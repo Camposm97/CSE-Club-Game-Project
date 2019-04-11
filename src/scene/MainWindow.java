@@ -1,10 +1,10 @@
 package scene;
 
+import io.DataLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import models.bag.PlayerBag;
 import scene.layout.TitleScreenPane;
-import utilties.DataLoader;
 import utilties.ImageUtil;
 import utilties.TitleScreenPaneUtil;
 

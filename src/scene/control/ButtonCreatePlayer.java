@@ -2,16 +2,17 @@ package scene.control;
 
 import java.io.IOException;
 
+import io.DataSaver;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import models.entities.Player;
+import models.statistics.Abilities;
+import models.statistics.Stat;
+import models.statistics.StatType;
+import models.statistics.Statistics;
 import scene.layout.CharacterBuilderPane;
-import statistics.Stat;
-import statistics.StatType;
-import statistics.Statistics;
 import utilties.CharBuilderUtil;
-import utilties.DataSaver;
 import utilties.WindowLoader;
 
 public class ButtonCreatePlayer extends Button {
@@ -28,7 +29,7 @@ public class ButtonCreatePlayer extends Button {
 	private class HandlerCreatePlayer implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent e) {
-			if (charPane.isAvAttrPtsEmpty())
+			if (charPane.isAvailAbilPtsEmpty())
 				try {
 					createPlayer();
 				} catch (IOException ex) {
@@ -41,8 +42,10 @@ public class ButtonCreatePlayer extends Button {
 		public void createPlayer() throws IOException {
 			String name = charPane.getTfName().getText();
 			String backStory = charPane.getBackStory().getTaBackground().getText();
-			Stat abilityPts = new Stat(StatType.Ability, CharBuilderUtil.INIT_ABILITY_POINTS, CharBuilderUtil.INIT_ABILITY_POINTS);
-			Player p1 = new Player(name, new Statistics(abilityPts, 15, 10, charPane.getAbilitiesViewer().getAbilities()), backStory);
+			Stat abilityPts = new Stat(StatType.Ability, CharBuilderUtil.INIT_ABILITY_PTS);
+			Abilities abils = charPane.getAbilsViewer().getAbilities();
+			Statistics stats = new Statistics(abilityPts, 15, 10, abils);
+			Player p1 = new Player(name, stats, backStory);
 
 			// Display Player
 			System.out.println(p1.toString());

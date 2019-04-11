@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import scene.layout.CharacterBuilderPane;
 
 public class CharBuilderUtil {
-	public static final int INIT_ABILITY_POINTS = 30;
+	public static final int INIT_ABILITY_PTS = 30;
 	public static final Integer INIT_ABILITY_SCORE = -2;
 	public static final String AVAIL_PTS_TXT = "Available Ability Points: ";
 
@@ -18,8 +18,8 @@ public class CharBuilderUtil {
 		charPane.setHgap(10);
 
 		charPane.add(FXUtil.loadHBox(Pos.CENTER_LEFT, new Label("Character's Name:"), charPane.getTfName()), 0, 0);
-		charPane.add(charPane.getLblAvailablePoints(), 0, 1);
-		charPane.add(charPane.getAbilitiesViewer(), 0, 2);
+		charPane.add(charPane.getLblAvailPts(), 0, 1);
+		charPane.add(charPane.getAbilsViewer(), 0, 2);
 		charPane.add(charPane.getBackStory(), 0, 9, 4, 1);
 		charPane.add(FXUtil.loadHBox(charPane.getBtCreate(), FXUtil.loadBtCancel(charPane)), 0, 10, 4, 1);
 	}

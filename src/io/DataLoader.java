@@ -1,7 +1,7 @@
-package utilties;
+package io;
 
-import io.ObjectFile;
 import models.bag.PlayerBag;
+import utilties.Paths;
 
 public class DataLoader {
 	public static PlayerBag loadPlayerBag() {

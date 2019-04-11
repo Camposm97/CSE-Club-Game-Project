@@ -1,4 +1,4 @@
-package statistics;
+package models.statistics;
 
 import java.io.Serializable;
 
