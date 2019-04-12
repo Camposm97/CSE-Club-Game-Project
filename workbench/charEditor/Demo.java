@@ -15,6 +15,7 @@ public class Demo extends Application {
 		CharacterEditorPane pane = new CharacterEditorPane(player);
 		stage.setScene(new Scene(pane));
 		stage.setTitle("Demo");
+//		stage.setFullScreen(true);
 		stage.show();
 	}
 	

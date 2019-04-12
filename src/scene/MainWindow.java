@@ -5,7 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import models.bag.PlayerBag;
 import scene.layout.TitleScreenPane;
-import utilties.ImageUtil;
+import utilties.HandlerUtil;
+import utilties.ImgUtil;
 import utilties.TitleScreenPaneUtil;
 
 /**
@@ -19,8 +20,9 @@ public class MainWindow {
 	
 	public MainWindow(Stage stage) {
 		this.playerBag = DataLoader.loadPlayerBag();
-		ImageUtil.loadStageIcon(stage);
+		ImgUtil.loadStageIcon(stage);
 		Scene scene = new Scene(new TitleScreenPane(playerBag), WIDTH, HEIGHT);
+		HandlerUtil.impFullScreen(stage);
 		stage.setScene(scene);
 		stage.setTitle(TitleScreenPaneUtil.TITLE);
 		stage.show();

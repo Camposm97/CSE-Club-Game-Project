@@ -39,9 +39,10 @@ public class PlayerLoaderPaneUtil {
 	
 	public static Button loadBtPlayerData(Player p) {
 		Button bt = new Button(FormatUtil.format(p));
+		bt.setStyle("-fx-font-size: 18;");
 		bt.setAlignment(Pos.CENTER_LEFT);
 		bt.setOnMouseEntered(e -> {
-			bt.setTextFill(Color.ROYALBLUE);
+			bt.setTextFill(Color.web("#38A1E6"));
 		});
 		bt.setOnMouseExited(e -> {
 			bt.setTextFill(Color.BLACK);

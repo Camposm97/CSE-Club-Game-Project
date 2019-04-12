@@ -8,7 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class ImageUtil {
+public class ImgUtil {
 	public static final String ICON_MAIN = "resources/images/icons/main.png";
 	public static final String ICON_CHAR = "resources/images/icons/character.png";
 	public static final String ICON_INV = "resources/images/icons/inventory.png";

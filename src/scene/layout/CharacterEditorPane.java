@@ -6,13 +6,12 @@ import models.entities.Player;
 import utilties.CharEditorUtil;
 
 public class CharacterEditorPane extends TabPane {
-	protected Player player;
+	private Player player;
 	private TextField tfName;
-	
 	public CharacterEditorPane(Player player) {
 		this.tfName = CharEditorUtil.loadTfName();
 		this.player = player;
-		CharEditorUtil.displayControls(this);
+		new CharEditorUtil(this);
 	}
 	
 	public Player getPlayer() {
