@@ -11,15 +11,15 @@ import models.statistics.Abilities;
 import models.statistics.Stat;
 import models.statistics.StatType;
 import models.statistics.Statistics;
-import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerBuilderPane;
 import utilties.CharBuilderUtil;
 import utilties.WindowLoader;
 
 public class ButtonCreatePlayer extends Button {
 	public static final int WIDTH = 256;
-	private CharacterBuilderPane charPane;
+	private PlayerBuilderPane charPane;
 
-	public ButtonCreatePlayer(CharacterBuilderPane charPane) {
+	public ButtonCreatePlayer(PlayerBuilderPane charPane) {
 		super("Create Character");
 		super.setPrefWidth(WIDTH);
 		this.charPane = charPane;

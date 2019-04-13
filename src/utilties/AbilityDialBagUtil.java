@@ -7,10 +7,10 @@ import scene.control.DexterityDial;
 import scene.control.IntelligenceDial;
 import scene.control.StrengthDial;
 import scene.control.WisdomDial;
-import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerBuilderPane;
 
 public class AbilityDialBagUtil {	
-	public static AbilityDial[] loadAttributeDial(CharacterBuilderPane charPane) {
+	public static AbilityDial[] loadAttributeDial(PlayerBuilderPane charPane) {
 		AbilityDial[] arr = {new StrengthDial(charPane), new DexterityDial(charPane), new ConsitutionDial(charPane), 
 				new IntelligenceDial(charPane), new WisdomDial(charPane), new CharismaDial(charPane)};
 		return arr;

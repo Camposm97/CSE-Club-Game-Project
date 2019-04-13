@@ -9,11 +9,13 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import models.bag.PlayerBag;
 import scene.control.ButtonCreatePlayer;
-import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerBuilderPane;
 import scene.layout.PlayerLoaderPane;
 import scene.layout.TitleScreenPane;
 
 public class FXUtil {	
+	public static final Insets DEFAULT_INSETS = new Insets(10);
+	
 	/**
 	 * Spacing = 10; Padding = 10; Alignment = Pos.CENTER;
 	 * @param nodes
@@ -21,7 +23,7 @@ public class FXUtil {
 	 */
 	public static VBox loadVBox(Node...nodes) {
 		VBox vBox = new VBox(10);
-		vBox.setPadding(new Insets(10));
+		vBox.setPadding(DEFAULT_INSETS);
 		vBox.setAlignment(Pos.CENTER);
 		for (Node node : nodes)
 			vBox.getChildren().add(node);
@@ -35,7 +37,7 @@ public class FXUtil {
 	 */
 	public static HBox loadHBox(Node...nodes) {
 		HBox hBox = new HBox(10);
-		hBox.setPadding(new Insets(10));
+		hBox.setPadding(DEFAULT_INSETS);
 		hBox.setAlignment(Pos.CENTER);
 		for (Node node : nodes)
 			hBox.getChildren().add(node);
@@ -44,7 +46,7 @@ public class FXUtil {
 	
 	public static HBox loadHBox(int spacing, Pos pos, Node...nodes) {
 		HBox hBox = new HBox(spacing);
-		hBox.setPadding(new Insets(10));
+		hBox.setPadding(DEFAULT_INSETS);
 		hBox.setAlignment(pos);
 		for (Node node : nodes)
 			hBox.getChildren().add(node);
@@ -66,12 +68,12 @@ public class FXUtil {
 	 */
 	public static Button loadBtCancel(Pane pane) {
 		Button bt = new Button("Cancel");
-		if (pane instanceof CharacterBuilderPane)
+		if (pane instanceof PlayerBuilderPane)
 			bt.setPrefWidth(ButtonCreatePlayer.WIDTH);
 		bt.setOnAction(e -> {
 			PlayerBag playerBag = null;
-			if (pane instanceof CharacterBuilderPane)
-				playerBag = ((CharacterBuilderPane)pane).getPlayerBag();
+			if (pane instanceof PlayerBuilderPane)
+				playerBag = ((PlayerBuilderPane)pane).getPlayerBag();
 			if (pane instanceof PlayerLoaderPane)
 				playerBag = ((PlayerLoaderPane)pane).getPlayerBag();
 			pane.getScene().setRoot(new TitleScreenPane(playerBag));

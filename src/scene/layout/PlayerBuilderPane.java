@@ -9,7 +9,7 @@ import models.statistics.StatType;
 import scene.control.ButtonCreatePlayer;
 import utilties.CharBuilderUtil;
 
-public class CharacterBuilderPane extends GridPane {
+public class PlayerBuilderPane extends GridPane {
 	private PlayerBag playerBag;
 	private Stat abilityPts;	// Replace totalPoints and currentPoints with this.
 	private int totalPoints, currentPoints;
@@ -19,7 +19,7 @@ public class CharacterBuilderPane extends GridPane {
 	private AbilitiesViewer abilsViewer;
 	private ButtonCreatePlayer btCreate;
 
-	public CharacterBuilderPane(PlayerBag playerBag) { // Constructor
+	public PlayerBuilderPane(PlayerBag playerBag) { // Constructor
 		this.playerBag = playerBag;
 		this.abilityPts = new Stat(StatType.Ability, CharBuilderUtil.INIT_ABILITY_PTS);
 		this.tfName = CharBuilderUtil.loadTfName(this);

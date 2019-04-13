@@ -65,6 +65,6 @@ public class Stat implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Stat [type=" + type + ", totalPoints=" + totalPoints + ", currentPoints=" + currentPoints + "]";
+		return "(" + getCurrentPoints() + " / " + getTotalPoints() + ")";
 	}
 }

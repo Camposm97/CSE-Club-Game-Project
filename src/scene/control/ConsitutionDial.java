@@ -1,10 +1,10 @@
 package scene.control;
 
-import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerBuilderPane;
 
 public class ConsitutionDial extends AbilityDial {
 
-	public ConsitutionDial(CharacterBuilderPane characterPane) {
+	public ConsitutionDial(PlayerBuilderPane characterPane) {
 		super("Consitution:", "Being able to eat a bad tomato.", characterPane);
 	}
 }

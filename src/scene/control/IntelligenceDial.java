@@ -1,10 +1,10 @@
 package scene.control;
 
-import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerBuilderPane;
 
 public class IntelligenceDial extends AbilityDial {
 	
-	public IntelligenceDial(CharacterBuilderPane characterPane) {
+	public IntelligenceDial(PlayerBuilderPane characterPane) {
 		super("Intelligence:", "Knowing a tomato is a fruit.", characterPane);
 	}
 }

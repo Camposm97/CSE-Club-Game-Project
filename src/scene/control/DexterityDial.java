@@ -1,9 +1,9 @@
 package scene.control;
 
-import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerBuilderPane;
 
 public class DexterityDial extends AbilityDial {
-	public DexterityDial(CharacterBuilderPane characterPane) {
+	public DexterityDial(PlayerBuilderPane characterPane) {
 		super("Dexterity:", "Being able to dodge a tomato.", characterPane);
 	}
 }

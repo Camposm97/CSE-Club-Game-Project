@@ -43,8 +43,21 @@ public class Ability implements Serializable {
 		return computeModifier(score);
 	}
 	
+	public String getModifierToString() {
+		int modifier = computeModifier(score);
+		if (modifier > 0)
+			return "+" + modifier;
+		else
+			return "" + modifier;
+	}
+	
+//	@Override
+//	public String toString() {
+//		return "Ability [type=" + type + ", score=" + score + "]";
+//	}
+	
 	@Override
 	public String toString() {
-		return "Ability [type=" + type + ", score=" + score + "]";
+		return type.toString() + ": " + score + " (" + computeModifier(String.valueOf(score)) + ")";
 	}
 }
