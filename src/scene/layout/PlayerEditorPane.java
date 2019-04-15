@@ -2,11 +2,13 @@ package scene.layout;
 
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Separator;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -32,7 +34,7 @@ public class PlayerEditorPane extends TabPane {
 //	}
 	
 	private class PlayerEditorUtil {
-		private static final byte ICON_SIZE = 20;
+		private static final byte ICON_SIZE = 32;
 		private static final float BAR_RATIO = (float) 0.25;
 		private static final float HBOX_RATIO = (float) 0.35;
 		private PlayerEditorPane charEditor;
@@ -40,7 +42,7 @@ public class PlayerEditorPane extends TabPane {
 		public PlayerEditorUtil(PlayerEditorPane charEditor) {	// Constructor
 			this.charEditor = charEditor;
 			this.charEditor.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
-			this.charEditor.setStyle("-fx-font-size: 16;");
+			this.charEditor.setStyle("-fx-font-size: 24;");
 			this.charEditor.getTabs().add(loadTabChar());
 			this.charEditor.getTabs().add(loadTabInventory());
 			this.charEditor.getTabs().add(loadTabOptions());
@@ -65,7 +67,7 @@ public class PlayerEditorPane extends TabPane {
 		}
 		
 		private Tab loadTabOptions() {
-			Tab tab = new Tab("Options");
+			Tab tab = new Tab("Options", new OptionsPane());
 			ImageView iv = ImgUtil.loadIconOptions();
 			iv.setFitWidth(ICON_SIZE);
 			iv.setFitHeight(ICON_SIZE);
@@ -82,7 +84,7 @@ public class PlayerEditorPane extends TabPane {
 			}
 			
 			private GridPane loadCenter() {
-				Label lblLvl = new Label("LVL: " + p.getStats().getLvl().getLvl());
+				Label lblLvl = new Label("LVL " + p.getStats().getLvl().getLvl());
 				VBox vBox = new VBox(5);
 				vBox.getChildren().addAll(loadHpBox(), loadMpBox());
 				GridPane gridPane = new GridPane();
@@ -106,7 +108,7 @@ public class PlayerEditorPane extends TabPane {
 				Label lblCha = new Label(abils.getAbilCha().toString());
 				GridPane gridPane = new GridPane();
 				gridPane.setStyle("-fx-border-color: lightgray");
-				gridPane.setAlignment(Pos.CENTER_LEFT);
+//				gridPane.setAlignment(Pos.CENTER);
 				gridPane.setPadding(FXUtil.DEFAULT_INSETS);
 				gridPane.setVgap(10);
 				gridPane.setHgap(20);
@@ -125,10 +127,17 @@ public class PlayerEditorPane extends TabPane {
 				StackPane stackPane = new StackPane(ivChar);
 				stackPane.setPadding(FXUtil.DEFAULT_INSETS);
 				stackPane.setStyle("-fx-border-color: lightgray;");
+				
+				TextArea ta = new TextArea(p.getBackStory());
+				ta.setStyle("-fx-font-size: 16");
+				ta.setEditable(false);
+				ta.setWrapText(true);
+				ta.setPrefWidth(stackPane.getWidth());
+				
 				VBox vBox = new VBox(10);
 				vBox.setPadding(FXUtil.DEFAULT_INSETS);
-				vBox.setAlignment(Pos.TOP_CENTER);
-				vBox.getChildren().addAll(stackPane);
+//				vBox.setAlignment(Pos.CENTER);
+				vBox.getChildren().addAll(stackPane,ta);
 				return vBox;
 			}
 			
@@ -177,8 +186,52 @@ public class PlayerEditorPane extends TabPane {
 //			
 //		}
 //		
-//		private class OptionsPane extends BorderPane {
-//			
-//		}
+		private class OptionsPane extends BorderPane {
+			public OptionsPane() {
+				this.setCenter(loadCenter());
+				this.setPadding(FXUtil.DEFAULT_INSETS);
+			}
+			
+			private GridPane loadCenter() {
+				TextArea ta = new TextArea();
+				ta.prefWidthProperty().bind(this.widthProperty().divide(2));
+				ta.prefHeightProperty().bind(this.heightProperty().divide(2));
+				ta.setEditable(false);
+				ta.setWrapText(true);
+				
+				Button btSave = new Button("Save");
+				btSave.prefWidthProperty().bind(this.widthProperty().divide(2));
+				btSave.setOnMouseEntered(e -> {
+					ta.setText("Save the current game.");
+				});
+				Button btLoad = new Button("Load");
+				btLoad.setOnMouseEntered(e -> {
+					ta.setText("Load a saved game.");
+				});
+				btLoad.prefWidthProperty().bind(this.widthProperty().divide(2));
+				Button btGraphics = new Button("Graphics");
+				btGraphics.setOnMouseEntered(e -> {
+					ta.setText("Graphic Options");
+				});
+				btGraphics.prefWidthProperty().bind(this.widthProperty().divide(2));
+				Button btExit = new Button("Exit Game");
+				btExit.setOnMouseEntered(e -> {
+					ta.setText("Exit the game and go to title screen.");
+				});
+				btExit.prefWidthProperty().bind(this.widthProperty().divide(2));
+				
+				VBox vBox = new VBox(10);
+				vBox.setAlignment(Pos.TOP_CENTER);
+				vBox.getChildren().addAll(btSave, btLoad, btGraphics, btExit);
+				
+				
+				
+				GridPane gridPane = new GridPane();
+				gridPane.setHgap(10);
+				gridPane.add(vBox, 0, 0, 1, 3);
+				gridPane.add(ta, 1, 0, 1, 3);
+				return gridPane;
+			}
+		}
 	}
 }

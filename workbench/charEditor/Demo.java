@@ -7,18 +7,19 @@ import models.entities.Player;
 import models.statistics.Abilities;
 import models.statistics.Statistics;
 import scene.layout.PlayerEditorPane;
+import utilties.HandlerUtil;
 import utilties.LevelUtil;
 
 public class Demo extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
-		Player player = new Player("Camposm", new Statistics(10, 10, 15, 10, new Abilities(20, 10, 5, 2, 25, 34)), "Hello World");
+		Player player = new Player("Camposm", new Statistics(10, 10, 15, 10, new Abilities(35, 35, 24, 45, 23, 35)), "Just a man looking for a purpose in life and finding a place to settle.  ");
 		LevelUtil.autoLevelUp(player.getStats().getLvl());
 		player.getStats().getHitPts().minusFromCurrent(7);
 		PlayerEditorPane pane = new PlayerEditorPane(player);
 		stage.setScene(new Scene(pane));
 		stage.setTitle("Demo");
-//		stage.setFullScreen(true);
+		HandlerUtil.impFullScreen(stage);
 		stage.show();
 	}
 	
