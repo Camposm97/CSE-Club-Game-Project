@@ -43,15 +43,16 @@ public class Demo extends Application {
 	 * @return
 	 */
 	public Pane loadCenterPane(Stage stage) {
-		ImageView ivCenter = new ImageView(ImgUtil.loadImg("resources/sample.gif"));
-		ivCenter.setPreserveRatio(true);
-		ivCenter.fitWidthProperty().bind(stage.widthProperty().multiply(0.99));
-		ivCenter.fitHeightProperty().bind(stage.heightProperty().multiply(0.9));
+		ImageView imageView = new ImageView(ImgUtil.loadImg("resources/sample.gif"));
+		imageView.setPreserveRatio(true);
+		imageView.fitWidthProperty().bind(stage.widthProperty().multiply(0.99));
+		imageView.fitHeightProperty().bind(stage.heightProperty().multiply(0.9));
+		imageView.maxWidth(500);
 		
 		BorderPane borderPane = new BorderPane(getTriangle(), null, loadMonsterStats(), null, loadPlayerStats());		
 		StackPane pane = new StackPane();
 		pane.setStyle("-fx-background-color: black");
-		pane.getChildren().addAll(ivCenter, borderPane);		
+		pane.getChildren().addAll(imageView, borderPane);		
 		return pane;
 	}
 	

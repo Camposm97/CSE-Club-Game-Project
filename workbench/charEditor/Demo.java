@@ -13,7 +13,7 @@ import utilties.LevelUtil;
 public class Demo extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
-		Player player = new Player("Camposm", new Statistics(10, 10, 15, 10, new Abilities(35, 35, 24, 45, 23, 35)), "Just a man looking for a purpose in life and finding a place to settle.  ");
+		Player player = new Player("Camposm", new Statistics(10, 10, 15, 10, new Abilities(35, 35, 24, 45, 23, 35)), "Back Story Goes Here");
 		LevelUtil.autoLevelUp(player.getStats().getLvl());
 		player.getStats().getHitPts().minusFromCurrent(7);
 		PlayerEditorPane pane = new PlayerEditorPane(player);

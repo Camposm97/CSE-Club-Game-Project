@@ -45,7 +45,7 @@ public class Demo extends Application {
 		line.endXProperty().bind(pane.widthProperty().divide(2).add(25));
 		line.endYProperty().bind(pane.heightProperty().divide(2));
 		PathTransition path = new PathTransition();
-		path.setDuration(Duration.millis(25));
+		path.setDuration(Duration.millis(100));
 //		path.setRate();
 //		path.setOnFinished(e -> {
 //			System.out.println("Animation Finished");
