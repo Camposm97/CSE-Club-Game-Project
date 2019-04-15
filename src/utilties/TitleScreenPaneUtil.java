@@ -16,9 +16,9 @@ public class TitleScreenPaneUtil {
 	private static int BT_WIDTH = 200;
 
 	public static void displayControls(TitleScreenPane root) {
-		HandlerUtil.impExitKey(root);
 		root.setTop(root.getTxtTitle());
-		root.setBottom(FXUtil.loadVBox(root.getBtNewGame(), root.getBtLoadGame(), root.getBtHow(), root.getBtExit()));
+		root.setBottom(FXUtil.loadVBox(root.getBtNewGame(), root.getBtLoadGame(), root.getBtExit()));
+//		root.setBottom(FXUtil.loadVBox(root.getBtNewGame(), root.getBtLoadGame(), root.getBtHow(), root.getBtExit()));
 		BorderPane.setAlignment(root.getTop(), Pos.TOP_CENTER);
 		root.setPadding(new Insets(50));
 	}
@@ -56,15 +56,15 @@ public class TitleScreenPaneUtil {
 		return bt;
 	}
 
-	public static Button loadBtHow() {
-		Button bt = new Button("How to Play");
-		bt.setPrefWidth(BT_WIDTH);
-		bt.setFont(Font.font(20));
-		bt.setOnAction(e -> {
-			WindowLoader.showHowToPlay();
-		});
-		return bt;
-	}
+//	public static Button loadBtHow() {
+//		Button bt = new Button("How to Play");
+//		bt.setPrefWidth(BT_WIDTH);
+//		bt.setFont(Font.font(20));
+//		bt.setOnAction(e -> {
+//			WindowLoader.showHowToPlay();
+//		});
+//		return bt;
+//	}
 
 	public static Button loadBtExit() {
 		Button bt = new Button("Exit");

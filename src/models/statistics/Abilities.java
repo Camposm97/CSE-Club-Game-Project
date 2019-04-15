@@ -4,49 +4,49 @@ import java.io.Serializable;
 
 public class Abilities implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private Ability strength;
-	private Ability dexterity;
-	private Ability constitution;
-	private Ability intelligence;
-	private Ability wisdom;
-	private Ability charisma;
+	private Ability abilStr;
+	private Ability abilDex;
+	private Ability abilCon;
+	private Ability abilInt;
+	private Ability abilWis;
+	private Ability abilCha;
 
 	public Abilities(int strScore, int dexScore, int conScore, int intScore, int wisScore, int chaScore) {
-		this.strength = new Ability(AbilityType.Strength, strScore);
-		this.dexterity = new Ability(AbilityType.Dexterity, dexScore);
-		this.constitution = new Ability(AbilityType.Constitution, conScore);
-		this.intelligence = new Ability(AbilityType.Intelligence, intScore);
-		this.wisdom = new Ability(AbilityType.Wisdom, wisScore);
-		this.charisma = new Ability(AbilityType.Charisma, chaScore);
+		this.abilStr = new Ability(AbilityType.Strength, strScore);
+		this.abilDex = new Ability(AbilityType.Dexterity, dexScore);
+		this.abilCon = new Ability(AbilityType.Constitution, conScore);
+		this.abilInt = new Ability(AbilityType.Intelligence, intScore);
+		this.abilWis = new Ability(AbilityType.Wisdom, wisScore);
+		this.abilCha = new Ability(AbilityType.Charisma, chaScore);
 	}
 
-	public Ability getStrength() {
-		return strength;
+	public Ability getAbilStr() {
+		return abilStr;
 	}
 
-	public Ability getDexterity() {
-		return dexterity;
+	public Ability getAbilDex() {
+		return abilDex;
 	}
 
-	public Ability getConstitution() {
-		return constitution;
+	public Ability getAbilCon() {
+		return abilCon;
 	}
 
-	public Ability getIntelligence() {
-		return intelligence;
+	public Ability getAbilInt() {
+		return abilInt;
 	}
 
-	public Ability getWisdom() {
-		return wisdom;
+	public Ability getAbilWis() {
+		return abilWis;
 	}
 
-	public Ability getCharisma() {
-		return charisma;
+	public Ability getAbilCha() {
+		return abilCha;
 	}
 
 	@Override
 	public String toString() {
-		return "Abilities [strength=" + strength + ", dexterity=" + dexterity + ", constitution=" + constitution
-				+ ", intelligence=" + intelligence + ", wisdom=" + wisdom + ", charisma=" + charisma + "]";
+		return "Abilities [abilStr=" + abilStr + ", abilDex=" + abilDex + ", abilCon=" + abilCon + ", abilInt="
+				+ abilInt + ", abilWis=" + abilWis + ", abilCha=" + abilCha + "]";
 	}
 }

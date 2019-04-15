@@ -4,17 +4,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerBuilderPane;
 import utilties.AbilityDialUtil;
 
 public abstract class AbilityDial extends GridPane {
 	protected Label lblAbility;
 	protected String desc;
-	protected CharacterBuilderPane charPane;
+	protected PlayerBuilderPane charPane;
 	protected TextField tfScore, tfModifier;
 	protected Button btPlus, btMinus;
 	
-	public AbilityDial(String abilityName, String desc, CharacterBuilderPane charPane) {
+	public AbilityDial(String abilityName, String desc, PlayerBuilderPane charPane) {
 		this.lblAbility = new Label(abilityName);
 		this.desc = desc;
 		this.charPane = charPane;
@@ -37,7 +37,7 @@ public abstract class AbilityDial extends GridPane {
 		return desc;
 	}
 	
-	public CharacterBuilderPane getCharPane() {
+	public PlayerBuilderPane getCharPane() {
 		return charPane;
 	}
 

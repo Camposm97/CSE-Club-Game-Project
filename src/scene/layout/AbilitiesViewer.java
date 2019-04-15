@@ -8,7 +8,7 @@ import utilties.AbilitiesViewerUtil;
 public class AbilitiesViewer extends GridPane {
 	private AbilityDialBag dialBag;
 
-	public AbilitiesViewer(CharacterBuilderPane charPane) {
+	public AbilitiesViewer(PlayerBuilderPane charPane) {
 		this.dialBag = new AbilityDialBag(charPane);
 		AbilitiesViewerUtil.displayControls(this);
 	}

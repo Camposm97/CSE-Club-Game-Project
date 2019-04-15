@@ -16,7 +16,7 @@ public class TitleScreenPane extends BorderPane {
 		this.txtTitle = TitleScreenPaneUtil.loadTxtTitle();
 		this.btNewGame = TitleScreenPaneUtil.loadBtNewGame(this);
 		this.btLoadGame = TitleScreenPaneUtil.loadBtLoadGame(this);
-		this.btHow = TitleScreenPaneUtil.loadBtHow();
+//		this.btHow = TitleScreenPaneUtil.loadBtHow();
 		this.btExit = TitleScreenPaneUtil.loadBtExit();
 		TitleScreenPaneUtil.displayControls(this);
 	}

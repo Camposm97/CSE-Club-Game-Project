@@ -1,12 +1,12 @@
 package scene.control;
 
-import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerBuilderPane;
 import utilties.AbilityDialBagUtil;
 
 public class AbilityDialBag {
 	private AbilityDial[] array;
 
-	public AbilityDialBag(CharacterBuilderPane charPane) {
+	public AbilityDialBag(PlayerBuilderPane charPane) {
 		this.array = AbilityDialBagUtil.loadAttributeDial(charPane);
 		disableDialersWithNoPoints();
 	}

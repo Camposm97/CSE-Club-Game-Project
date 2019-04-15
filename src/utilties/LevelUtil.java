@@ -23,7 +23,7 @@ public class LevelUtil {
 	
 	private static void addHitPoints(Statistics stats) {
 		Stat stat = stats.getHitPts();
-		int bonus = stats.getAbils().getConstitution().getModifier();
+		int bonus = stats.getAbils().getAbilCon().getModifier();
 		if (bonus > 0)
 			stat.addToTotal(Die.rollD10() + bonus);
 		else
@@ -33,7 +33,7 @@ public class LevelUtil {
 	
 	private static void addManaPoints(Statistics stats) {
 		Stat stat = stats.getManaPts();
-		int bonus = stats.getAbils().getIntelligence().getModifier();
+		int bonus = stats.getAbils().getAbilInt().getModifier();
 		if (bonus > 0)
 			stat.addToTotal(Die.rollD10() + bonus);
 		else

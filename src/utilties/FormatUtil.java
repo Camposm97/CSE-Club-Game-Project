@@ -9,12 +9,12 @@ public class FormatUtil {
 	 */
 	public static String format(Player p) {
 		return p.getName() + "\n" + String.format("LVL %-10s\t", p.getStats().getLvl().getLvl())
-				+ String.format("STR: %-12sDEX: %-12sCON: %-12sINT: %-12sWIS: %-12sCHA: %-12s",
-						p.getStats().getAbils().getStrength().getScore(),
-						p.getStats().getAbils().getDexterity().getScore(),
-						p.getStats().getAbils().getConstitution().getScore(),
-						p.getStats().getAbils().getIntelligence().getScore(),
-						p.getStats().getAbils().getWisdom().getScore(),
-						p.getStats().getAbils().getCharisma().getScore());
+				+ String.format("STR: %-12s DEX: %-12s CON: %-12s INT: %-12s WIS: %-12s CHA: %-12s",
+						p.getStats().getAbils().getAbilStr().getScore(),
+						p.getStats().getAbils().getAbilDex().getScore(),
+						p.getStats().getAbils().getAbilCon().getScore(),
+						p.getStats().getAbils().getAbilInt().getScore(),
+						p.getStats().getAbils().getAbilWis().getScore(),
+						p.getStats().getAbils().getAbilCha().getScore());
 	}
 }

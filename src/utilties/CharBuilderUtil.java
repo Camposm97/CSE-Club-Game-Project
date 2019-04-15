@@ -4,14 +4,14 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import scene.layout.CharacterBuilderPane;
+import scene.layout.PlayerBuilderPane;
 
 public class CharBuilderUtil {
 	public static final int INIT_ABILITY_PTS = 30;
 	public static final Integer INIT_ABILITY_SCORE = -2;
 	public static final String AVAIL_PTS_TXT = "Available Ability Points: ";
 
-	public static void displayControls(CharacterBuilderPane charPane) {
+	public static void displayControls(PlayerBuilderPane charPane) {
 		charPane.setPadding(new Insets(20));
 		charPane.setAlignment(Pos.CENTER);
 		charPane.setVgap(10);
@@ -24,7 +24,7 @@ public class CharBuilderUtil {
 		charPane.add(FXUtil.loadHBox(charPane.getBtCreate(), FXUtil.loadBtCancel(charPane)), 0, 10, 4, 1);
 	}
 
-	public static TextField loadTfName(CharacterBuilderPane charPane) {
+	public static TextField loadTfName(PlayerBuilderPane charPane) {
 		TextField tf = new TextField();
 		tf.setPrefColumnCount(48);
 		tf.textProperty().addListener((observable, oldValue, newValue) -> {
