@@ -2,6 +2,11 @@ package gui;
 
 import javafx.scene.text.Font;
 
+/**
+ * Note: Wow, I like this.  I never thought of this before :O
+ * Good idea for class! :D
+ * @author Camposm97
+ */
 public class GUISettings {
 	int width;
 	int height;

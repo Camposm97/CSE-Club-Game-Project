@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 import models.*;
 
 public class WindowBuilder {
-	
 	private GUISettings settings;
 	private Pane window;
 	private Pane display;
@@ -24,11 +23,11 @@ public class WindowBuilder {
 	
 	
 	WindowBuilder(Stage stage){
-		int width = (int) Screen.getPrimary().getVisualBounds().getWidth();
+		int width = (int) Screen.getPrimary().getVisualBounds().getWidth();	// Nice! @Camposm97
 		int height = (int) Screen.getPrimary().getVisualBounds().getHeight();
 		displayWindows = new DisplayWindows();
 		int font = 20;
-		if (height < 900) {
+		if (height < 900) {	// Is this some sort of principle?  A rule?  @Camposm97
 			font = 16;
 		}
 		settings = new GUISettings(width, height, font);

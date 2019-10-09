@@ -14,7 +14,6 @@ public class Buff implements Serializable {
 	private Stats initialBuff;
 	private Stats periodicBuff;
 	private Stats finalBuff;
-	
 	private int duration;
 	private int currentProgress;
 	
